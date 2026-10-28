@@ -30,8 +30,9 @@
       --pad: clamp(20px, 6vw, 88px);
     }
     *, *::before, *::after { box-sizing: border-box; }
-    html { background: var(--bg); scroll-behavior: smooth; overflow-x: clip; }
-    body { margin: 0; overflow-x: clip; background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    html, body { width: 100%; height: auto !important; min-height: 100%; overflow-x: hidden; overflow-y: auto !important; }
+    html { background: var(--bg); scroll-behavior: auto; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
     body, button, a { -webkit-tap-highlight-color: transparent; }
     a { color: inherit; }
     button { color: inherit; font: inherit; }
@@ -67,6 +68,7 @@
     .skip-link { position: fixed; z-index: 20; top: 8px; left: 8px; padding: 12px 16px; transform: translateY(-160%); border-radius: 10px; background: white; color: var(--bg); }
     .skip-link:focus { transform: none; }
     :focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
+    .page-progress { position: fixed; z-index: 30; inset: 0 0 auto; height: 2px; transform: scaleX(0); transform-origin: left center; background: linear-gradient(90deg, var(--cyan), var(--violet), var(--emerald)); pointer-events: none; }
 
     .site-nav { position: fixed; z-index: 15; top: 14px; left: 50%; display: flex; width: min(calc(100% - 32px), 1120px); min-height: 58px; align-items: center; justify-content: space-between; gap: 20px; padding: 0 22px; transform: translateX(-50%); border: 1px solid rgba(195,211,245,.14); border-radius: 999px; background: rgba(7,10,19,.78); box-shadow: 0 12px 45px rgba(0,0,0,.28); backdrop-filter: blur(20px); }
     .brand { white-space: nowrap; font: 700 14px var(--display); letter-spacing: -.04em; text-decoration: none; }
@@ -126,7 +128,7 @@
     .bento-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
     .bento-accent { background: linear-gradient(120deg, var(--cyan), #A9CFFF); background-clip: text; -webkit-text-fill-color: transparent; }
 
-    #projects { position: relative; display: flex; min-height: 100svh; flex-direction: column; justify-content: center; overflow: hidden; padding: 108px 0 28px; background: linear-gradient(180deg, transparent, rgba(12,18,33,.52) 50%, transparent); }
+    #projects { position: relative; display: flex; min-height: 0; flex-direction: column; justify-content: center; overflow: visible; padding: 108px 0 28px; background: linear-gradient(180deg, transparent, rgba(12,18,33,.52) 50%, transparent); }
     .projects-top { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding: 0 var(--pad); }
     .projects-top .section-heading { margin-bottom: 22px; }
     .projects-top .section-heading h2 { font-size: clamp(2.1rem,4vw,3.55rem); }
@@ -135,9 +137,14 @@
     .project-control { min-width: 93px; min-height: 42px; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.035); cursor: pointer; font-size: 11px; font-weight: 700; transition: border-color .2s, background .2s; }
     .project-control:hover:not(:disabled) { border-color: rgba(56,189,248,.48); background: rgba(56,189,248,.09); }
     .project-control:disabled { opacity: .42; cursor: default; }
-    .project-viewport { width: 100%; overflow: hidden; }
-    .project-track { display: flex; width: max-content; align-items: stretch; gap: 18px; padding: 8px var(--pad) 24px; will-change: transform; }
-    .project-card { display: flex; width: clamp(300px,26vw,360px); min-height: 442px; flex: 0 0 auto; flex-direction: column; padding: 10px; }
+    .project-dots { display: flex; align-items: center; gap: 7px; padding-bottom: 25px; }
+    .project-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 99px; background: #45516A; cursor: pointer; transition: width .25s, background .25s, box-shadow .25s; }
+    .project-dot[aria-current="true"] { width: 23px; background: var(--cyan); box-shadow: 0 0 12px rgba(56,189,248,.5); }
+    .project-viewport { width: 100%; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-behavior: auto; scroll-snap-type: x mandatory; scrollbar-width: none; touch-action: pan-x pan-y; cursor: grab; }
+    .project-viewport::-webkit-scrollbar { display: none; }
+    .project-viewport.is-dragging { cursor: grabbing; user-select: none; }
+    .project-track { display: flex; width: max-content; align-items: stretch; gap: 18px; padding: 8px max(var(--pad), calc((100vw - clamp(300px, 26vw, 360px)) / 2)) 24px; }
+    .project-card { display: flex; width: clamp(300px,26vw,360px); min-height: 442px; flex: 0 0 auto; flex-direction: column; padding: 10px; scroll-snap-align: center; }
     .project-window { position: relative; display: grid; min-height: 190px; place-items: center; overflow: hidden; border: 1px solid rgba(255,255,255,.09); border-radius: 15px; background: var(--preview, linear-gradient(135deg,#102338,#151631)); }
     .project-window::before { position: absolute; inset: 0; background: radial-gradient(circle at 75% 20%, rgba(255,255,255,.28), transparent 33%), linear-gradient(125deg, transparent 35%, rgba(255,255,255,.06)); content: ""; }
     .window-bar { position: absolute; z-index: 1; top: 11px; right: 12px; left: 12px; display: flex; height: 24px; align-items: center; gap: 5px; padding: 0 9px; border: 1px solid rgba(255,255,255,.13); border-radius: 8px; background: rgba(5,7,13,.45); backdrop-filter: blur(8px); }
@@ -285,9 +292,10 @@
       .projects-controls { justify-content: space-between; padding-bottom: 14px; }
       .project-count { margin-right: auto; }
       .project-control { min-width: 84px; min-height: 42px; }
-      .project-viewport { overflow: visible; }
-      .project-track { display: grid; width: 100%; gap: 12px; padding: 0 var(--pad) 17px; transform: none !important; }
-      .project-card { width: 100%; min-height: 0; }
+      .project-dots { justify-content: center; padding: 0 0 15px; }
+      .project-viewport { overflow-x: auto; overflow-y: hidden; }
+      .project-track { display: flex; width: max-content; gap: 12px; padding: 0 max(var(--pad), calc((100vw - min(84vw,350px)) / 2)) 17px; }
+      .project-card { width: min(84vw,350px); min-height: 0; }
       .project-window { min-height: 175px; }
       .project-info p { min-height: 0; }
       .projects-hint { display: none; }
@@ -328,6 +336,7 @@
 </head>
 <body>
   <a class="skip-link" href="#home">Skip to content</a>
+  <div class="page-progress" aria-hidden="true"></div>
   <nav class="site-nav" aria-label="Main navigation">
     <a class="brand" href="#home"><span class="brand-mark">M</span>Mohamed Hamdy</a>
     <div class="nav-links" id="nav-links">
@@ -418,6 +427,13 @@
           <button class="project-control projects-prev" type="button" aria-label="Previous featured project" disabled>← Prev</button>
           <button class="project-control projects-next" type="button" aria-label="Next featured project">Next →</button>
         </div>
+      </div>
+      <div class="project-dots" role="group" aria-label="Choose a featured project">
+        <button class="project-dot" type="button" aria-label="Show EgyptLore" aria-current="true"></button>
+        <button class="project-dot" type="button" aria-label="Show Engz Web" aria-current="false"></button>
+        <button class="project-dot" type="button" aria-label="Show AetherCode AI" aria-current="false"></button>
+        <button class="project-dot" type="button" aria-label="Show SabaePDF PRO" aria-current="false"></button>
+        <button class="project-dot" type="button" aria-label="Show QuickCV" aria-current="false"></button>
       </div>
       <div class="project-viewport">
         <div class="project-track">
@@ -517,7 +533,6 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script>
     (() => {
       const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -527,10 +542,42 @@
       const prevButton = document.querySelector(".projects-prev");
       const nextButton = document.querySelector(".projects-next");
       const count = document.querySelector(".project-count");
+      const projectViewport = document.querySelector(".project-viewport");
+      const projectTrack = document.querySelector(".project-track");
+      const projectDots = [...document.querySelectorAll(".project-dot")];
       let activeProject = 0;
-      let lenis;
+      let dragStart = null;
+      let dragged = false;
+      let scrollFrame = 0;
+      let progressFrame = 0;
 
       document.querySelector("#year").textContent = String(new Date().getFullYear());
+
+      document.addEventListener("click", (event) => {
+        const link = event.target.closest('a[href^="#"]');
+        if (!link) return;
+        const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+        if (!target) return;
+        event.preventDefault();
+        history.pushState(null, "", link.hash);
+        target.scrollIntoView({
+          behavior: reducedMotion ? "auto" : "smooth",
+          block: "start"
+        });
+      });
+
+      const progressBar = document.querySelector(".page-progress");
+      const updatePageProgress = () => {
+        progressFrame = 0;
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+        progressBar.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+      };
+      window.addEventListener("scroll", () => {
+        if (!progressFrame) progressFrame = requestAnimationFrame(updatePageProgress);
+      }, { passive: true });
+      window.addEventListener("resize", updatePageProgress, { passive: true });
+      updatePageProgress();
 
       navToggle.addEventListener("click", () => {
         const open = navToggle.getAttribute("aria-expanded") !== "true";
@@ -564,21 +611,68 @@
         count.textContent = `${String(activeProject + 1).padStart(2, "0")} / ${String(projectCards.length).padStart(2, "0")}`;
         prevButton.disabled = activeProject === 0;
         nextButton.disabled = activeProject === projectCards.length - 1;
+        projectDots.forEach((dot, dotIndex) => {
+          dot.setAttribute("aria-current", String(dotIndex === activeProject));
+        });
       };
       const moveProject = (direction) => {
-        const nextIndex = Math.max(0, Math.min(activeProject + direction, projectCards.length - 1));
-        const trigger = window.ScrollTrigger && ScrollTrigger.getById("project-showcase");
-        if (trigger) {
-          trigger.scroll(trigger.start + (trigger.end - trigger.start) * nextIndex / (projectCards.length - 1));
-        } else if (window.innerWidth <= 680) {
-          projectCards[nextIndex].scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" });
-        } else {
-          document.querySelector(".project-viewport").scrollBy({ left: direction * (projectCards[0].offsetWidth + 18), behavior: "smooth" });
-        }
+        scrollToProject(activeProject + direction);
+      };
+      const scrollToProject = (index) => {
+        const nextIndex = Math.max(0, Math.min(index, projectCards.length - 1));
+        const viewportRect = projectViewport.getBoundingClientRect();
+        const cardRect = projectCards[nextIndex].getBoundingClientRect();
+        const offset = projectViewport.scrollLeft + cardRect.left - viewportRect.left -
+          (projectViewport.clientWidth - projectCards[nextIndex].clientWidth) / 2;
+        projectViewport.scrollTo({ left: offset, behavior: reducedMotion ? "auto" : "smooth" });
         setProject(nextIndex);
       };
       prevButton.addEventListener("click", () => moveProject(-1));
       nextButton.addEventListener("click", () => moveProject(1));
+      projectDots.forEach((dot, index) => dot.addEventListener("click", () => scrollToProject(index)));
+      projectViewport.addEventListener("scroll", () => {
+        if (scrollFrame) cancelAnimationFrame(scrollFrame);
+        scrollFrame = requestAnimationFrame(() => {
+          const viewportCenter = projectViewport.getBoundingClientRect().left + projectViewport.clientWidth / 2;
+          let closestIndex = 0;
+          let closestDistance = Infinity;
+          projectCards.forEach((card, index) => {
+            const rect = card.getBoundingClientRect();
+            const distance = Math.abs(rect.left + rect.width / 2 - viewportCenter);
+            if (distance < closestDistance) {
+              closestDistance = distance;
+              closestIndex = index;
+            }
+          });
+          setProject(closestIndex);
+        });
+      }, { passive: true });
+      projectViewport.addEventListener("pointerdown", (event) => {
+        if (event.pointerType !== "mouse" || event.button !== 0) return;
+        dragStart = { x: event.clientX, scrollLeft: projectViewport.scrollLeft };
+        dragged = false;
+      });
+      projectViewport.addEventListener("pointermove", (event) => {
+        if (!dragStart || event.pointerType !== "mouse") return;
+        const deltaX = event.clientX - dragStart.x;
+        if (!dragged && Math.abs(deltaX) < 6) return;
+        dragged = true;
+        projectViewport.classList.add("is-dragging");
+        projectViewport.scrollLeft = dragStart.scrollLeft - deltaX;
+      });
+      const endDrag = () => {
+        dragStart = null;
+        projectViewport.classList.remove("is-dragging");
+        if (dragged) setTimeout(() => { dragged = false; }, 0);
+      };
+      projectViewport.addEventListener("pointerup", endDrag);
+      projectViewport.addEventListener("pointercancel", endDrag);
+      projectViewport.addEventListener("click", (event) => {
+        if (!dragged) return;
+        event.preventDefault();
+        event.stopPropagation();
+        dragged = false;
+      }, true);
 
       if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
         document.querySelectorAll(".glass-card").forEach((card) => {
@@ -613,13 +707,6 @@
 
       if (window.gsap && window.ScrollTrigger) {
         gsap.registerPlugin(ScrollTrigger);
-        if (!reducedMotion && window.Lenis) {
-          lenis = new Lenis({ duration: 1.15, smoothWheel: true, wheelMultiplier: .9 });
-          lenis.on("scroll", ScrollTrigger.update);
-          gsap.ticker.add((time) => lenis.raf(time * 1000));
-          gsap.ticker.lagSmoothing(0);
-        }
-
         gsap.utils.toArray(".reveal").forEach((element) => {
           gsap.from(element, {
             y: 28,
@@ -640,27 +727,20 @@
             onUpdate: () => { counter.textContent = String(Math.round(Number(counter.textContent))); }
           });
         });
-        const media = gsap.matchMedia();
-        media.add("(min-width: 681px) and (prefers-reduced-motion: no-preference)", () => {
-          const track = document.querySelector(".project-track");
-          const viewport = document.querySelector(".project-viewport");
-          const tween = gsap.to(track, {
-            x: () => -(track.scrollWidth - viewport.clientWidth),
+        gsap.fromTo(".project-window",
+          { y: 12, scale: .97 },
+          {
+            y: -8,
+            scale: 1.01,
             ease: "none",
             scrollTrigger: {
-              id: "project-showcase",
               trigger: "#projects",
-              pin: true,
-              start: "top top",
-              end: () => `+=${Math.max(track.scrollWidth - viewport.clientWidth, 1)}`,
-              scrub: 1,
-              invalidateOnRefresh: true,
-              anticipatePin: 1,
-              onUpdate: (self) => setProject(Math.round(self.progress * (projectCards.length - 1)))
+              start: "top bottom",
+              end: "bottom top",
+              scrub: .6
             }
-          });
-          return () => { tween.scrollTrigger && tween.scrollTrigger.kill(); tween.kill(); };
-        });
+          }
+        );
         window.addEventListener("load", () => ScrollTrigger.refresh(), { once: true });
       }
     })();
