@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#05070d">
-  <meta name="description" content="Mohamed Hamdy — AI and software engineering student, product builder, and QA tester in Alexandria, Egypt.">
+  <meta name="theme-color" content="#0A0A0B">
+  <meta name="description" content="Mohamed Hamdy — software engineer building web platforms, mobile apps, and AI tools in Alexandria, Egypt.">
   <meta name="author" content="Mohamed Hamdy">
   <meta property="og:title" content="Mohamed Hamdy — AI &amp; Software Engineering">
-  <meta property="og:description" content="Building thoughtful software, practical AI, and digital products.">
+  <meta property="og:description" content="Software engineering across web platforms, mobile apps, and practical AI tools.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,15 +16,15 @@
   <style>
     :root {
       color-scheme: dark;
-      --bg: #05070D;
-      --surface: #0B101E;
-      --surface-2: #101729;
-      --ink: #F3F6FF;
-      --muted: #99A4BB;
-      --line: rgba(195, 211, 245, .12);
-      --cyan: #38BDF8;
-      --violet: #818CF8;
-      --emerald: #34D399;
+      --bg: #0A0A0B;
+      --surface: #121214;
+      --surface-2: #18181B;
+      --ink: #F4F4F5;
+      --muted: #A1A1AA;
+      --line: #222226;
+      --cyan: #C6A982;
+      --violet: #9A9186;
+      --emerald: #B5AA98;
       --sans: "Plus Jakarta Sans", sans-serif;
       --display: "Space Grotesk", sans-serif;
       --pad: clamp(20px, 6vw, 88px);
@@ -39,10 +39,10 @@
     img { display: block; max-width: 100%; }
     h1, h2, h3, p { margin-top: 0; }
     h1, h2, h3 { font-family: var(--display); letter-spacing: -.055em; overflow-wrap: normal; word-break: normal; hyphens: none; }
-    ::selection { background: rgba(56, 189, 248, .35); color: white; }
+    ::selection { background: rgba(198, 169, 130, .3); color: white; }
     .wrap { width: min(100%, 1280px); margin-inline: auto; }
     .eyebrow, .mono { font: 500 10px/1.5 var(--display); letter-spacing: .12em; text-transform: uppercase; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--cyan); }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: #C6A982; }
     .eyebrow::before { width: 18px; height: 1px; background: currentColor; content: ""; }
     .section-heading { max-width: 730px; margin-bottom: 36px; }
     .section-heading h2 { margin: 12px 0 0; font-size: clamp(2.2rem, 5vw, 4.25rem); line-height: 1.02; }
@@ -55,161 +55,176 @@
       overflow: hidden;
       border: 1px solid var(--line);
       border-radius: 22px;
-      background: radial-gradient(420px circle at var(--mouse-x) var(--mouse-y), rgba(56,189,248,.11), transparent 68%), linear-gradient(145deg, rgba(16,23,41,.93), rgba(9,13,24,.94));
-      box-shadow: inset 0 1px rgba(255,255,255,.035), 0 18px 60px rgba(0,0,0,.2);
+      background: #121214;
+      box-shadow: inset 0 1px rgba(255,255,255,.025), 0 16px 40px rgba(0,0,0,.18);
       transition: border-color .25s, box-shadow .25s, transform .35s;
     }
-    .glass-card:hover { border-color: rgba(56,189,248,.34); box-shadow: inset 0 1px rgba(255,255,255,.06), 0 22px 70px rgba(0,0,0,.32); }
-    .pill-link { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 11px; padding: 0 20px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.035); color: var(--ink); font-size: 12px; font-weight: 700; text-decoration: none; transition: transform .2s, border-color .2s, background .2s; }
-    .pill-link:hover { transform: translateY(-2px); border-color: rgba(56,189,248,.55); background: rgba(56,189,248,.1); }
-    .pill-link.primary { border-color: transparent; background: linear-gradient(100deg, #0EA5E9, #6366F1); box-shadow: 0 8px 30px rgba(56,189,248,.18); }
-    .pill-link.primary:hover { background: linear-gradient(100deg, #38BDF8, #818CF8); }
+    .glass-card:hover { border-color: #34343A; box-shadow: inset 0 1px rgba(255,255,255,.04), 0 20px 46px rgba(0,0,0,.28); }
+    .pill-link { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 11px; padding: 0 20px; border: 1px solid #27272A; border-radius: 999px; background: #141417; color: #FAFAFA; font-size: 12px; font-weight: 600; text-decoration: none; transition: transform .2s, border-color .2s, background .2s; }
+    .pill-link:hover { transform: translateY(-2px); border-color: #34343A; background: #1A1A1D; }
+    .pill-link.primary { border-color: transparent; background: #F4F4F5; color: #09090B; box-shadow: none; }
+    .pill-link.primary:hover { background: #E4E4E7; }
     .pill-link .arrow { font-size: 17px; line-height: 1; }
     .skip-link { position: fixed; z-index: 20; top: 8px; left: 8px; padding: 12px 16px; transform: translateY(-160%); border-radius: 10px; background: white; color: var(--bg); }
     .skip-link:focus { transform: none; }
-    :focus-visible { outline: 2px solid var(--cyan); outline-offset: 4px; }
-    .page-progress { position: fixed; z-index: 30; inset: 0 0 auto; height: 2px; transform: scaleX(0); transform-origin: left center; background: linear-gradient(90deg, var(--cyan), var(--violet), var(--emerald)); pointer-events: none; }
+    :focus-visible { outline: 2px solid #C6A982; outline-offset: 4px; }
+    .page-progress { position: fixed; z-index: 30; inset: 0 0 auto; height: 2px; transform: scaleX(0); transform-origin: left center; background: #C6A982; pointer-events: none; }
 
-    .site-nav { position: fixed; z-index: 15; top: 14px; left: 50%; display: flex; width: min(calc(100% - 32px), 1120px); min-height: 58px; align-items: center; justify-content: space-between; gap: 20px; padding: 0 22px; transform: translateX(-50%); border: 1px solid rgba(195,211,245,.14); border-radius: 999px; background: rgba(7,10,19,.78); box-shadow: 0 12px 45px rgba(0,0,0,.28); backdrop-filter: blur(20px); }
+    .site-nav { position: fixed; z-index: 15; top: 14px; left: 50%; display: flex; width: min(calc(100% - 32px), 1120px); min-height: 58px; align-items: center; justify-content: space-between; gap: 20px; padding: 0 22px; transform: translateX(-50%); border: 1px solid #29292D; border-radius: 999px; background: rgba(18,18,20,.88); box-shadow: 0 12px 38px rgba(0,0,0,.3); backdrop-filter: blur(20px); }
     .brand { white-space: nowrap; font: 700 14px var(--display); letter-spacing: -.04em; text-decoration: none; }
-    .brand-mark { display: inline-grid; width: 25px; height: 25px; margin-right: 7px; place-items: center; border: 1px solid rgba(56,189,248,.38); border-radius: 9px; color: var(--cyan); }
+    .brand-tag { margin-left: 9px; color: #85858B; font: 500 9px/1.5 Consolas, monospace; letter-spacing: .04em; }
     .nav-links { display: flex; align-items: center; gap: clamp(15px, 2.5vw, 34px); }
-    .nav-links a { color: #CBD3E3; font-size: 11px; text-decoration: none; transition: color .2s; }
-    .nav-links a:hover { color: var(--cyan); }
+    .nav-links a { color: #C4C4C8; font-size: 11px; text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: #FAFAFA; }
     .nav-cta { min-height: 38px; padding: 0 15px; font-size: 11px; }
     .nav-toggle { display: none; }
 
     #home { position: relative; display: flex; min-height: max(760px, 100svh); align-items: center; overflow: hidden; padding: 116px var(--pad) 62px; isolation: isolate; }
-    #home::before, #home::after { position: absolute; z-index: -1; width: 60vw; aspect-ratio: 1; border-radius: 50%; filter: blur(100px); opacity: .19; content: ""; pointer-events: none; }
-    #home::before { top: -30%; left: -20%; background: var(--cyan); }
-    #home::after { right: -24%; bottom: -34%; background: var(--violet); }
     .hero-grid { display: grid; width: min(100%, 1280px); grid-template-columns: minmax(0,1.08fr) minmax(300px,.78fr); align-items: center; gap: clamp(46px, 9vw, 130px); margin: 0 auto; }
     .hero-copy { position: relative; z-index: 2; }
-    .status-pill { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 25px; padding: 9px 13px; border: 1px solid rgba(52,211,153,.22); border-radius: 999px; background: rgba(52,211,153,.06); color: #B5F6D9; font-size: 11px; }
-    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--emerald); box-shadow: 0 0 14px var(--emerald); animation: pulse 2s infinite; }
-    @keyframes pulse { 50% { box-shadow: 0 0 3px var(--emerald); opacity: .65; } }
-    .hero-copy h1 { max-width: 740px; margin: 0; font-size: clamp(3.35rem, 7.3vw, 7rem); line-height: .96; }
+    .status-pill { display: inline-flex; align-items: center; gap: 9px; margin-bottom: 25px; padding: 9px 13px; border: 1px solid #34343A; border-radius: 999px; background: #121214; color: #D4D4D8; font-size: 11px; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #A89A84; }
+    .hero-copy h1 { max-width: 740px; margin: 0; font-size: clamp(3.15rem, 4.4vw, 4.25rem); line-height: .98; }
     .hero-copy h1 span { display: block; }
-    .gradient-text { background: linear-gradient(100deg, #F5F7FF 5%, var(--cyan) 51%, #A5A9FF 94%); background-clip: text; -webkit-text-fill-color: transparent; }
-    .hero-intro { max-width: 510px; margin: 24px 0 29px; color: #A7B2C7; font-size: clamp(14px,1.2vw,16px); line-height: 1.85; }
+    .gradient-text { color: #D6C1A3; }
+    .hero-intro { max-width: 510px; margin: 24px 0 29px; color: #A1A1AA; font-size: clamp(14px,1.2vw,16px); line-height: 1.85; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; }
-    .hero-meta { display: flex; flex-wrap: wrap; gap: 17px; margin-top: 38px; color: #7F8BA3; font-size: 11px; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 17px; margin-top: 38px; color: #85858B; font-size: 11px; }
     .hero-meta span { display: inline-flex; align-items: center; gap: 8px; }
-    .hero-meta span::before { width: 5px; height: 5px; border-radius: 50%; background: var(--violet); content: ""; }
+    .hero-meta span::before { width: 5px; height: 5px; border-radius: 50%; background: #81796F; content: ""; }
     .portrait-wrap { position: relative; width: min(100%, 420px); justify-self: center; perspective: 1000px; }
-    .portrait-halo { position: absolute; inset: 9% -8% -4%; border-radius: 50%; background: radial-gradient(ellipse, rgba(56,189,248,.34), rgba(129,140,248,.16) 43%, transparent 70%); filter: blur(24px); }
-    .portrait-frame { position: relative; overflow: hidden; aspect-ratio: .79; padding: 9px; transform: perspective(1000px) rotateY(-7deg) rotateX(3deg); border: 1px solid rgba(162,207,255,.34); border-radius: 34px; background: linear-gradient(145deg, rgba(56,189,248,.23), rgba(129,140,248,.11) 46%, rgba(52,211,153,.15)); box-shadow: 0 28px 90px rgba(0,0,0,.48), 0 0 75px rgba(56,189,248,.14); transition: transform .4s; }
+    .portrait-halo { display: none; }
+    .portrait-frame { position: relative; overflow: hidden; aspect-ratio: .79; padding: 9px; transform: perspective(1000px) rotateY(-7deg) rotateX(3deg); border: 1px solid rgba(255,255,255,.1); border-radius: 34px; background: #141417; box-shadow: 0 24px 60px rgba(0,0,0,.42); transition: transform .4s; }
     .portrait-frame:hover { transform: perspective(1000px) rotateY(0) rotateX(0) translateY(-4px); }
-    .portrait-frame img { width: 100%; height: 100%; border: 1px solid rgba(255,255,255,.08); border-radius: 26px; background: #111827; object-fit: cover; object-position: center 38%; }
-    .portrait-caption { position: absolute; right: 20px; bottom: 20px; left: 20px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 15px; border: 1px solid rgba(255,255,255,.12); border-radius: 16px; background: rgba(5,7,13,.67); backdrop-filter: blur(16px); }
+    .portrait-frame img { width: 100%; height: 100%; border: 1px solid rgba(255,255,255,.1); border-radius: 26px; background: #121214; object-fit: cover; object-position: center 38%; }
+    .portrait-caption { position: absolute; right: 20px; bottom: 20px; left: 20px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 15px; border: 1px solid rgba(255,255,255,.12); border-radius: 16px; background: rgba(10,10,11,.82); backdrop-filter: blur(16px); }
     .portrait-caption strong { display: block; font: 600 13px var(--display); }
-    .portrait-caption span { color: #A8B3C9; font-size: 10px; }
-    .portrait-caption .mini-status { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); box-shadow: 0 0 15px var(--emerald); }
+    .portrait-caption span { color: #A1A1AA; font-size: 10px; }
+    .portrait-caption .mini-status { display: none; }
 
-    .stack-marquee { position: relative; overflow: hidden; border-block: 1px solid var(--line); background: linear-gradient(90deg, rgba(56,189,248,.055), rgba(11,16,30,.82) 20%, rgba(11,16,30,.82) 80%, rgba(129,140,248,.055)); }
+    .stack-marquee { position: relative; overflow: hidden; border-block: 1px solid var(--line); background: #0D0D0F; }
     .marquee-track { display: flex; width: max-content; animation: marquee 34s linear infinite; }
     .marquee-track:hover { animation-play-state: paused; }
     .marquee-group { display: flex; flex: 0 0 auto; align-items: center; gap: 11px; padding: 17px 6px; }
-    .stack-badge { display: inline-flex; align-items: center; gap: 9px; padding: 10px 15px; border: 1px solid rgba(195,211,245,.13); border-radius: 999px; background: rgba(255,255,255,.035); color: #C5D0E4; font: 500 11px var(--display); white-space: nowrap; box-shadow: inset 0 0 15px rgba(56,189,248,.025); }
-    .stack-badge::before { width: 6px; height: 6px; border-radius: 50%; background: var(--badge-color, var(--cyan)); box-shadow: 0 0 10px var(--badge-color, var(--cyan)); content: ""; }
+    .stack-badge { display: inline-flex; align-items: center; gap: 9px; padding: 10px 15px; border: 1px solid #29292D; border-radius: 999px; background: #141417; color: #C4C4C8; font: 500 11px var(--display); white-space: nowrap; }
+    .stack-badge::before { width: 6px; height: 6px; border-radius: 50%; background: #A89A84; content: ""; }
     @keyframes marquee { to { transform: translateX(-50%); } }
 
     #about, #works, #automation, #services { padding: clamp(84px, 10vw, 142px) var(--pad); }
     #about { position: relative; overflow: hidden; }
-    #about::before { position: absolute; top: 5%; right: -20%; width: 55vw; aspect-ratio: 1; border-radius: 50%; background: rgba(129,140,248,.11); filter: blur(110px); content: ""; pointer-events: none; }
     .bento-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 15px; }
     .bento-card { min-height: 224px; padding: 23px; }
     .bento-card:nth-child(1) { grid-column: span 2; }
     .bento-card:nth-child(2) { grid-column: span 2; }
-    .bento-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #8D9AB3; font: 500 10px var(--display); letter-spacing: .08em; text-transform: uppercase; }
-    .bento-icon { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid rgba(56,189,248,.2); border-radius: 12px; color: var(--cyan); background: rgba(56,189,248,.07); font: 600 16px var(--display); }
+    .bento-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; color: #8F8F96; font: 500 10px var(--display); letter-spacing: .08em; text-transform: uppercase; }
+    .bento-icon { display: grid; width: 34px; height: 34px; place-items: center; border: 1px solid #303034; border-radius: 12px; color: #C6A982; background: #19191B; font: 600 16px var(--display); }
     .bento-card h3 { margin: 31px 0 6px; font-size: clamp(1.7rem,3vw,2.7rem); line-height: 1.05; }
     .bento-card:nth-child(2) h3 { font-size: clamp(1.6rem,2.5vw,2.3rem); }
     .bento-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
-    .bento-accent { background: linear-gradient(120deg, var(--cyan), #A9CFFF); background-clip: text; -webkit-text-fill-color: transparent; }
+    .bento-accent { color: #C6A982; }
 
-    #projects { position: relative; display: flex; min-height: 0; flex-direction: column; justify-content: center; overflow: visible; padding: 108px 0 28px; background: linear-gradient(180deg, transparent, rgba(12,18,33,.52) 50%, transparent); }
+    #projects { position: relative; display: flex; min-height: 0; flex-direction: column; justify-content: center; overflow: visible; padding: 108px 0 28px; background: #0C0C0E; }
     .projects-top { display: flex; align-items: end; justify-content: space-between; gap: 24px; padding: 0 var(--pad); }
     .projects-top .section-heading { margin-bottom: 22px; }
     .projects-top .section-heading h2 { font-size: clamp(2.1rem,4vw,3.55rem); }
     .projects-controls { display: flex; align-items: center; gap: 9px; padding-bottom: 25px; }
     .project-count { margin-right: 8px; color: var(--muted); font: 500 10px var(--display); white-space: nowrap; }
-    .project-control { min-width: 93px; min-height: 42px; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.035); cursor: pointer; font-size: 11px; font-weight: 700; transition: border-color .2s, background .2s; }
-    .project-control:hover:not(:disabled) { border-color: rgba(56,189,248,.48); background: rgba(56,189,248,.09); }
+    .project-control { min-width: 93px; min-height: 42px; padding: 0 13px; border: 1px solid #2B2B2F; border-radius: 999px; background: #151517; cursor: pointer; font-size: 11px; font-weight: 700; transition: border-color .2s, background .2s; }
+    .project-control:hover:not(:disabled) { border-color: #45454B; background: #1B1B1E; }
     .project-control:disabled { opacity: .42; cursor: default; }
     .project-dots { display: flex; align-items: center; gap: 7px; padding-bottom: 25px; }
-    .project-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 99px; background: #45516A; cursor: pointer; transition: width .25s, background .25s, box-shadow .25s; }
-    .project-dot[aria-current="true"] { width: 23px; background: var(--cyan); box-shadow: 0 0 12px rgba(56,189,248,.5); }
+    .project-dot { width: 8px; height: 8px; padding: 0; border: 0; border-radius: 99px; background: #48484D; cursor: pointer; transition: width .25s, background .25s; }
+    .project-dot[aria-current="true"] { width: 23px; background: #C6A982; }
     .project-viewport { width: 100%; overflow-x: auto; overflow-y: hidden; overscroll-behavior-x: contain; scroll-behavior: auto; scroll-snap-type: x mandatory; scrollbar-width: none; touch-action: pan-x pan-y; cursor: grab; }
     .project-viewport::-webkit-scrollbar { display: none; }
     .project-viewport.is-dragging { cursor: grabbing; user-select: none; }
     .project-track { display: flex; width: max-content; align-items: stretch; gap: 18px; padding: 8px max(var(--pad), calc((100vw - clamp(300px, 26vw, 360px)) / 2)) 24px; }
     .project-card { display: flex; width: clamp(300px,26vw,360px); min-height: 442px; flex: 0 0 auto; flex-direction: column; padding: 10px; scroll-snap-align: center; }
-    .project-window { position: relative; display: grid; min-height: 190px; place-items: center; overflow: hidden; border: 1px solid rgba(255,255,255,.09); border-radius: 15px; background: var(--preview, linear-gradient(135deg,#102338,#151631)); }
-    .project-window::before { position: absolute; inset: 0; background: radial-gradient(circle at 75% 20%, rgba(255,255,255,.28), transparent 33%), linear-gradient(125deg, transparent 35%, rgba(255,255,255,.06)); content: ""; }
-    .window-bar { position: absolute; z-index: 1; top: 11px; right: 12px; left: 12px; display: flex; height: 24px; align-items: center; gap: 5px; padding: 0 9px; border: 1px solid rgba(255,255,255,.13); border-radius: 8px; background: rgba(5,7,13,.45); backdrop-filter: blur(8px); }
-    .window-bar i { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.56); }
-    .window-bar span { margin-left: 5px; color: rgba(255,255,255,.76); font: 500 8px var(--display); }
-    .window-ui { position: relative; z-index: 1; display: grid; width: 80%; height: 112px; grid-template-columns: 31px 1fr; gap: 9px; padding: 9px; transform: perspective(600px) rotateX(4deg) rotateY(-5deg); border: 1px solid rgba(255,255,255,.23); border-radius: 9px; background: rgba(8,12,22,.55); box-shadow: 0 18px 35px rgba(0,0,0,.3); transition: transform .35s; }
+    .project-window { position: relative; display: grid; min-height: 190px; place-items: center; overflow: hidden; border: 1px solid rgba(255,255,255,.09); border-radius: 15px; background: #171719; }
+    .project-window::before { position: absolute; inset: 0; background: linear-gradient(145deg, rgba(255,255,255,.035), transparent 48%); content: ""; }
+    .window-bar { position: absolute; z-index: 1; top: 11px; right: 12px; left: 12px; display: flex; height: 24px; align-items: center; gap: 5px; padding: 0 9px; border: 1px solid #343438; border-radius: 7px; background: #202023; }
+    .window-bar i { width: 5px; height: 5px; border-radius: 50%; background: #77777D; }
+    .window-bar span { margin-left: 5px; color: #C4C4C8; font: 500 8px var(--display); }
+    .window-ui { position: relative; z-index: 1; display: grid; width: 80%; height: 112px; grid-template-columns: 31px 1fr; gap: 9px; padding: 9px; transform: perspective(600px) rotateX(4deg) rotateY(-5deg); border: 1px solid #424247; border-radius: 8px; background: #111113; box-shadow: 0 16px 30px rgba(0,0,0,.32); transition: transform .35s; }
     .project-card:hover .window-ui { transform: perspective(600px) rotateX(0) rotateY(0) translateY(-3px); }
-    .ui-rail { display: grid; align-content: start; gap: 7px; padding: 6px 5px; border-radius: 5px; background: rgba(255,255,255,.06); }
-    .ui-rail i, .ui-line { display: block; height: 4px; border-radius: 4px; background: rgba(202,225,255,.4); }
-    .ui-rail i:nth-child(2) { width: 75%; background: var(--accent, var(--cyan)); }
+    .ui-rail { display: grid; align-content: start; gap: 7px; padding: 6px 5px; border-radius: 4px; background: #202023; }
+    .ui-rail i, .ui-line { display: block; height: 4px; border-radius: 4px; background: #626268; }
+    .ui-rail i:nth-child(2) { width: 75%; background: #C6A982; }
     .ui-main { display: grid; grid-template-columns: repeat(3,1fr); grid-template-rows: 12px 1fr; gap: 6px; padding: 5px; }
     .ui-main .ui-line:first-child { grid-column: span 3; width: 55%; }
-    .ui-tile { border: 1px solid rgba(255,255,255,.09); border-radius: 4px; background: linear-gradient(145deg, color-mix(in srgb, var(--accent, var(--cyan)) 45%, transparent), rgba(255,255,255,.04)); }
+    .ui-tile { border: 1px solid #353539; border-radius: 3px; background: #202023; }
+    .preview-map { display: block; padding: 0; background: #1D201D; }
+    .preview-map::after { position: absolute; inset: 39px 0 0; background: repeating-linear-gradient(35deg, transparent 0 24px, rgba(201,193,166,.18) 25px 27px, transparent 28px 47px), repeating-linear-gradient(125deg, transparent 0 35px, rgba(201,193,166,.12) 36px 38px, transparent 39px 61px), linear-gradient(90deg, transparent 47%, rgba(91,103,84,.34) 48% 63%, transparent 64%); content: ""; }
+    .preview-map .map-label { position: absolute; z-index: 2; top: 52px; left: 18px; color: #E5E0D3; font: 500 8px var(--display); }
+    .preview-map .map-route { position: absolute; z-index: 2; top: 72px; left: 31%; width: 41%; height: 48px; border: 2px solid #D4AF7D; border-left-color: transparent; border-bottom-color: transparent; border-radius: 50%; transform: rotate(12deg); }
+    .preview-map .map-pin { position: absolute; z-index: 2; top: 94px; left: 65%; width: 9px; height: 9px; border: 2px solid #F3E9D7; border-radius: 50% 50% 50% 0; background: #9C6745; transform: rotate(-45deg); }
+    .preview-dashboard { grid-template-columns: 1fr; grid-template-rows: 12px 1fr; gap: 5px; }
+    .preview-dashboard .dash-top { grid-column: 1; width: 37%; height: 5px; border-radius: 3px; background: #A89A84; }
+    .preview-dashboard .dash-metrics { display: grid; grid-template-columns: repeat(3,1fr); gap: 5px; }
+    .preview-dashboard .dash-metrics i { position: relative; border: 1px solid #353539; border-radius: 3px; background: #1D1D20; }
+    .preview-dashboard .dash-metrics i::after { position: absolute; right: 4px; bottom: 5px; left: 4px; height: 3px; background: #77736D; content: ""; }
+    .preview-dashboard .dash-chart { grid-column: 1; height: 27px; border-bottom: 1px solid #4A4945; background: linear-gradient(155deg, transparent 0 37%, #A89A84 38% 40%, transparent 41% 55%, #A89A84 56% 58%, transparent 59%); }
+    .preview-code { grid-template-columns: 1fr 1fr; gap: 5px; padding: 8px; }
+    .preview-code .code-pane { display: grid; align-content: start; gap: 7px; padding: 7px; border-radius: 3px; background: #19191B; }
+    .preview-code .code-pane i { width: 80%; height: 3px; border-radius: 3px; background: #68686E; }
+    .preview-code .code-pane i:nth-child(2) { width: 56%; background: #A89A84; }
+    .preview-code .code-pane i:nth-child(3) { width: 68%; }
+    .preview-code .code-pane + .code-pane { border-left: 2px solid #79705F; }
+    .preview-pdf { grid-template-columns: 22px 1fr; grid-template-rows: 1fr; }
+    .preview-pdf .pdf-tools { display: grid; align-content: start; gap: 6px; padding: 4px; border-right: 1px solid #343438; }
+    .preview-pdf .pdf-tools i { height: 8px; border-radius: 2px; background: #39393D; }
+    .preview-pdf .pdf-page { display: grid; width: 59px; height: 76px; align-content: start; gap: 5px; justify-self: center; padding: 10px 7px; background: #E9E7E1; box-shadow: 0 5px 12px rgba(0,0,0,.35); }
+    .preview-pdf .pdf-page i { height: 2px; background: #85837F; }
+    .preview-pdf .pdf-page i:first-child { width: 65%; height: 5px; background: #4B4944; }
+    .preview-cv { display: grid; width: 58px; height: 82px; grid-template-columns: 17px 1fr; gap: 6px; justify-self: center; padding: 8px 6px; background: #E9E7E1; box-shadow: 0 5px 12px rgba(0,0,0,.35); }
+    .preview-cv .cv-side { background: #D0CCC3; }
+    .preview-cv .cv-body { display: grid; align-content: start; gap: 5px; padding-top: 6px; }
+    .preview-cv .cv-body i { height: 2px; background: #8A8780; }
+    .preview-cv .cv-body i:first-child { width: 75%; height: 4px; background: #484640; }
     .project-info { display: flex; flex: 1; flex-direction: column; padding: 20px 11px 9px; }
-    .project-info .mono { color: #8A98B2; font-size: 9px; }
+    .project-info .mono { color: #85858B; font-size: 9px; }
     .project-info h3 { margin: 9px 0 7px; font-size: 23px; line-height: 1.15; }
     .project-info p { min-height: 42px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
     .tech-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
-    .tech-pills span { padding: 6px 9px; border: 1px solid rgba(195,211,245,.13); border-radius: 999px; background: rgba(255,255,255,.035); color: #B7C4DB; font: 500 9px var(--display); }
-    .project-link { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 17px; color: #DDE6F6; font-size: 10px; font-weight: 700; text-decoration: none; }
+    .tech-pills span { padding: 6px 9px; border: 1px solid #303034; border-radius: 999px; background: #18181B; color: #C4C4C8; font: 500 9px var(--display); }
+    .project-link { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 17px; color: #D4D4D8; font-size: 10px; font-weight: 700; text-decoration: none; }
     .project-link span:last-child { color: var(--cyan); font-size: 16px; }
-    .project-link:hover { color: var(--cyan); }
-    .project-card[data-project="egypt"] { --preview: linear-gradient(135deg,#0C5B70,#172A50 58%,#5F4F97); --accent: #52D3C0; }
-    .project-card[data-project="engz"] { --preview: linear-gradient(135deg,#163F5D,#315A9D 55%,#8963CC); --accent: #72B7FF; }
-    .project-card[data-project="aether"] { --preview: linear-gradient(135deg,#2A1749,#4B318A 53%,#17799C); --accent: #B28AFF; }
-    .project-card[data-project="pdf"] { --preview: linear-gradient(135deg,#6D2237,#993C4A 55%,#CA795D); --accent: #FF9B86; }
-    .project-card[data-project="quickcv"] { --preview: linear-gradient(135deg,#115E55,#187A79 54%,#5272B9); --accent: #5BE0B6; }
-    .projects-hint { padding: 0 var(--pad); color: #73809A; font: 500 9px var(--display); letter-spacing: .09em; text-transform: uppercase; }
+    .project-link:hover { color: #F4F4F5; }
+    .project-link span:last-child { color: #C6A982; font-size: 16px; }
+    .projects-hint { padding: 0 var(--pad); color: #77777D; font: 500 9px var(--display); letter-spacing: .09em; text-transform: uppercase; }
 
     #works { padding-top: 115px; }
     .works-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; perspective: 1100px; }
     .work-card { min-height: 365px; transform-style: preserve-3d; }
-    .work-preview { position: relative; display: flex; height: 150px; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid var(--line); background: var(--work-preview, linear-gradient(135deg,#155b76,#3455a2 56%,#7b69c4)); }
-    .work-preview::before { position: absolute; inset: 0; background: radial-gradient(ellipse at 75% 22%, rgba(255,255,255,.25), transparent 33%), repeating-linear-gradient(0deg, transparent 0 22px, rgba(255,255,255,.035) 23px 24px); content: ""; }
-    .work-window { position: relative; z-index: 1; width: 74%; height: 92px; padding: 10px; transform: perspective(600px) rotateX(4deg) rotateY(-5deg); border: 1px solid rgba(255,255,255,.31); border-radius: 12px; background: rgba(7,11,22,.46); box-shadow: 0 15px 35px rgba(0,0,0,.25); transition: transform .35s; }
+    .work-preview { position: relative; display: flex; height: 150px; align-items: center; justify-content: center; overflow: hidden; border-bottom: 1px solid var(--line); background: #171719; }
+    .work-preview::before { position: absolute; inset: 0; background: repeating-linear-gradient(0deg, transparent 0 22px, rgba(255,255,255,.025) 23px 24px); content: ""; }
+    .work-window { position: relative; z-index: 1; width: 74%; height: 92px; padding: 10px; transform: perspective(600px) rotateX(4deg) rotateY(-5deg); border: 1px solid #3A3A3F; border-radius: 9px; background: #111113; box-shadow: 0 14px 28px rgba(0,0,0,.3); transition: transform .35s; }
     .work-card:hover .work-window { transform: perspective(600px) rotateX(0) rotateY(0) translateY(-3px); }
-    .work-window-top { display: flex; gap: 4px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,.14); }
-    .work-window-top i { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.68); }
+    .work-window-top { display: flex; gap: 4px; padding-bottom: 8px; border-bottom: 1px solid #303034; }
+    .work-window-top i { width: 5px; height: 5px; border-radius: 50%; background: #77777D; }
     .work-window-content { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; padding-top: 9px; }
-    .work-window-content i { height: 36px; border: 1px solid rgba(255,255,255,.13); border-radius: 5px; background: linear-gradient(145deg,rgba(255,255,255,.14),rgba(255,255,255,.025)); }
+    .work-window-content i { height: 36px; border: 1px solid #303034; border-radius: 4px; background: #202023; }
     .work-copy { padding: 19px 22px 21px; }
-    .work-copy .mono { color: #8492AB; font-size: 9px; }
+    .work-copy .mono { color: #85858B; font-size: 9px; }
     .work-copy h3 { margin: 7px 0 6px; font-size: 21px; }
     .work-copy p { min-height: 36px; margin: 0; color: var(--muted); font-size: 11px; line-height: 1.65; }
     .work-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 17px; }
-    .work-bottom a, .automation-link { color: #C7D4E9; font-size: 10px; font-weight: 700; text-decoration: none; }
-    .work-bottom a:hover, .automation-link:hover { color: var(--cyan); }
-    .work-card[data-work="waratha"] { --work-preview: linear-gradient(130deg,#4A327D,#B25D98 57%,#E5A66D); }
-    .work-card[data-work="clinic"] { --work-preview: linear-gradient(130deg,#146B79,#359E9B 56%,#9AD4C3); }
-    .work-card[data-work="path"] { --work-preview: linear-gradient(130deg,#3556A3,#6269C8 52%,#B183D5); }
-    .work-card[data-work="ateeq"] { --work-preview: linear-gradient(130deg,#794D34,#B67C51 54%,#E1B283); }
+    .work-bottom a, .automation-link { color: #D4D4D8; font-size: 10px; font-weight: 700; text-decoration: none; }
+    .work-bottom a:hover, .automation-link:hover { color: #C6A982; }
 
     #automation { padding: 40px 0 142px; }
-    .automation-shell { padding: clamp(24px,4vw,48px); border: 1px solid rgba(129,140,248,.18); border-radius: 28px; background: radial-gradient(ellipse at 100% 0,rgba(129,140,248,.12),transparent 40%), linear-gradient(145deg,#0B101E,#080B14 72%); }
+    .automation-shell { padding: clamp(24px,4vw,48px); border: 1px solid #29292D; border-radius: 28px; background: #111113; }
     .automation-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
-    .automation-card { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: rgba(5,7,13,.42); }
-    .terminal { min-height: 148px; padding: 15px 18px; border-bottom: 1px solid var(--line); background: radial-gradient(ellipse at 88% 0,rgba(56,189,248,.12),transparent 40%),#080C16; color: #A5F3CF; font: 10px/1.9 Consolas,monospace; }
-    .terminal-bar { display: flex; align-items: center; gap: 5px; margin-bottom: 9px; color: #8492AB; font: 500 9px var(--display); }
-    .terminal-bar i { width: 7px; height: 7px; border-radius: 50%; background: #F87171; }
-    .terminal-bar i:nth-child(2) { background: #FBBF24; }
-    .terminal-bar i:nth-child(3) { margin-right: 8px; background: #34D399; }
+    .automation-card { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: #0C0C0E; }
+    .terminal { min-height: 148px; padding: 15px 18px; border-bottom: 1px solid var(--line); background: #0D0D0F; color: #C6A982; font: 10px/1.9 Consolas,monospace; }
+    .terminal-bar { display: flex; align-items: center; gap: 5px; margin-bottom: 9px; color: #85858B; font: 500 9px var(--display); }
+    .terminal-bar i { width: 7px; height: 7px; border-radius: 50%; background: #65656A; }
+    .terminal-bar i:nth-child(2) { background: #77736D; }
+    .terminal-bar i:nth-child(3) { margin-right: 8px; background: #A89A84; }
     .terminal-line { display: block; overflow: hidden; width: max-content; max-width: 100%; white-space: nowrap; animation: terminal-in .6s both; }
     .terminal-line:nth-child(3) { animation-delay: .2s; }
     .terminal-line:nth-child(4) { animation-delay: .55s; }
-    .terminal-line:nth-child(5) { animation-delay: .9s; color: #A9B6FF; }
+    .terminal-line:nth-child(5) { animation-delay: .9s; color: #E2D7C8; }
     .terminal-cursor { display: inline-block; width: 6px; height: 12px; margin-left: 4px; vertical-align: -2px; background: var(--emerald); animation: blink .8s steps(2) infinite; }
     @keyframes terminal-in { from { max-width: 0; } to { max-width: 100%; } }
     @keyframes blink { 50% { opacity: 0; } }
@@ -221,7 +236,7 @@
 
     #services { padding-top: 75px; }
     .accordion { display: grid; gap: 10px; }
-    .service-row { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: linear-gradient(115deg,rgba(14,20,36,.94),rgba(8,12,23,.94)); }
+    .service-row { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: #121214; }
     .service-trigger { display: grid; width: 100%; min-height: 76px; grid-template-columns: 46px minmax(0,1fr) 34px; align-items: center; gap: 12px; padding: 15px 22px; border: 0; background: transparent; text-align: left; cursor: pointer; }
     .service-num { color: var(--cyan); font: 500 11px var(--display); }
     .service-trigger strong { font: 600 clamp(14px,1.6vw,18px) var(--display); letter-spacing: -.025em; }
@@ -235,24 +250,24 @@
     .service-row.open .service-panel-inner { padding-bottom: 20px; }
     .service-panel p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.7; }
     .service-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
-    .service-tags span { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; color: #ADBBD1; font-size: 9px; }
+    .service-tags span { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; color: #C4C4C8; font-size: 9px; }
 
-    #contact { position: relative; overflow: hidden; padding: 86px var(--pad) 30px; border-top: 1px solid var(--line); background: radial-gradient(ellipse at 50% 110%,rgba(56,189,248,.16),transparent 46%), #070A12; }
+    #contact { position: relative; overflow: hidden; padding: 86px var(--pad) 30px; border-top: 1px solid var(--line); background: #0A0A0B; }
     .footer-main { display: flex; align-items: end; justify-content: space-between; gap: 40px; padding-bottom: 56px; }
     .footer-title { max-width: 610px; margin: 12px 0 0; font-size: clamp(3rem,8vw,7.2rem); line-height: .94; }
-    .footer-title span { background: linear-gradient(100deg,#F5F7FF,#7DD3FC 55%,#A5A9FF); background-clip: text; -webkit-text-fill-color: transparent; }
+    .footer-title span { color: #D6C1A3; }
     .footer-note { max-width: 260px; margin: 0 0 5px; color: var(--muted); font-size: 12px; line-height: 1.75; }
     .footer-links { display: flex; flex-wrap: wrap; gap: 9px; }
     .footer-links .pill-link { min-height: 43px; padding-inline: 16px; font-size: 10px; }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 15px; margin-top: 55px; padding-top: 18px; border-top: 1px solid var(--line); color: #748099; font-size: 10px; }
-    .footer-bottom a { color: #AEBBD0; text-decoration: none; }
+    .footer-bottom { display: flex; justify-content: space-between; gap: 15px; margin-top: 55px; padding-top: 18px; border-top: 1px solid var(--line); color: #77777D; font-size: 10px; }
+    .footer-bottom a { color: #C4C4C8; text-decoration: none; }
     .footer-bottom a:hover { color: var(--cyan); }
     .reveal { opacity: 1; }
 
     @media (max-width: 900px) {
       :root { --pad: 28px; }
       .hero-grid { grid-template-columns: minmax(0,1fr) minmax(245px,.75fr); gap: 35px; }
-      .hero-copy h1 { font-size: clamp(3.1rem,8vw,5.5rem); }
+      .hero-copy h1 { font-size: clamp(2.8rem,6vw,3.9rem); }
       .bento-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
       .bento-card { min-height: 210px; }
       .project-card { width: min(70vw,350px); }
@@ -261,15 +276,16 @@
       :root { --pad: 20px; }
       .site-nav { top: 10px; width: calc(100% - 20px); min-height: 54px; gap: 12px; padding: 0 15px; }
       .brand { font-size: 12px; }
+      .brand-tag { font-size: 8px; }
       .nav-cta { display: none; }
-      .nav-toggle { display: inline-flex; min-height: 38px; align-items: center; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.04); font-size: 11px; }
-      .nav-links { position: absolute; top: 62px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px; border: 1px solid var(--line); border-radius: 18px; background: rgba(7,10,19,.96); box-shadow: 0 18px 50px rgba(0,0,0,.35); backdrop-filter: blur(18px); }
+      .nav-toggle { display: inline-flex; min-height: 38px; align-items: center; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; background: #171719; font-size: 11px; }
+      .nav-links { position: absolute; top: 62px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px; border: 1px solid var(--line); border-radius: 18px; background: rgba(18,18,20,.98); box-shadow: 0 18px 42px rgba(0,0,0,.38); backdrop-filter: blur(18px); }
       .nav-links.open { display: grid; }
       .nav-links a { padding: 13px 12px; border-radius: 10px; font-size: 13px; }
-      .nav-links a:hover { background: rgba(56,189,248,.08); }
+      .nav-links a:hover { background: #202023; }
       #home { min-height: auto; padding: 124px var(--pad) 65px; }
       .hero-grid { grid-template-columns: 1fr; gap: 39px; }
-      .hero-copy h1 { max-width: 500px; font-size: clamp(3.2rem,13.3vw,5.1rem); }
+      .hero-copy h1 { max-width: 500px; font-size: clamp(2.65rem,11vw,3.7rem); }
       .hero-intro { max-width: 480px; margin-block: 18px 23px; }
       .hero-meta { margin-top: 26px; }
       .portrait-wrap { width: min(78%,350px); }
@@ -324,7 +340,7 @@
     }
     @media (max-width: 370px) {
       :root { --pad: 16px; }
-      .hero-copy h1 { font-size: 3.05rem; }
+      .hero-copy h1 { font-size: 2.6rem; }
       .hero-actions .pill-link { padding-inline: 14px; }
       .bento-card, .bento-card:nth-child(1), .bento-card:nth-child(2) { padding: 15px; }
       .footer-links { grid-template-columns: 1fr; }
@@ -338,7 +354,7 @@
   <a class="skip-link" href="#home">Skip to content</a>
   <div class="page-progress" aria-hidden="true"></div>
   <nav class="site-nav" aria-label="Main navigation">
-    <a class="brand" href="#home"><span class="brand-mark">M</span>Mohamed Hamdy</a>
+    <a class="brand" href="#home">mohamed.hamdy<span class="brand-tag">/ software engineer</span></a>
     <div class="nav-links" id="nav-links">
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -354,9 +370,9 @@
     <section id="home" aria-labelledby="hero-title">
       <div class="hero-grid">
         <div class="hero-copy">
-          <div class="status-pill"><span class="status-dot" aria-hidden="true"></span>Available for meaningful projects</div>
-          <h1 id="hero-title">Ideas into <span class="gradient-text">things that work.</span></h1>
-          <p class="hero-intro">I’m Mohamed Hamdy — an AI and software engineering student building useful products across web, mobile, and AI.</p>
+          <div class="status-pill"><span class="status-dot" aria-hidden="true"></span>Based in Alexandria, Egypt • Open to Roles &amp; Freelance</div>
+          <h1 id="hero-title">Software engineer building <span class="gradient-text">web platforms, mobile apps &amp; AI tools.</span></h1>
+          <p class="hero-intro">I’m Mohamed Hamdy, a CS &amp; AI student who ships web products, Flutter apps, and practical AI tools.</p>
           <div class="hero-actions">
             <a class="pill-link primary" href="#projects">Explore Work <span class="arrow" aria-hidden="true">↓</span></a>
             <a class="pill-link" href="MOHAMED_HAMDY.pdf" target="_blank" rel="noopener">Download CV <span class="arrow" aria-hidden="true">↗</span></a>
@@ -367,7 +383,7 @@
           <div class="portrait-halo" aria-hidden="true"></div>
           <div class="portrait-frame" id="portrait-frame">
             <img src="me.png" alt="Mohamed Hamdy" fetchpriority="high">
-            <div class="portrait-caption"><div><strong>Mohamed Hamdy</strong><span>Developer · Builder · QA</span></div><i class="mini-status" aria-label="Available"></i></div>
+            <div class="portrait-caption"><div><strong>Mohamed Hamdy</strong><span>Alexandria, Egypt — CS &amp; AI</span></div><i class="mini-status" aria-label="Available"></i></div>
           </div>
         </div>
       </div>
@@ -387,15 +403,15 @@
     <section id="about" aria-labelledby="about-title">
       <div class="wrap">
         <div class="section-heading reveal">
-          <span class="eyebrow">A little about me</span>
-          <h2 id="about-title">Curiosity, <span class="bento-accent">made tangible.</span></h2>
-          <p>Computer Science and AI at AASTMT. I turn ambitious ideas into polished products, and bring a tester’s eye to every detail.</p>
+          <span class="eyebrow">Background</span>
+          <h2 id="about-title">I build it, then <span class="bento-accent">test it properly.</span></h2>
+          <p>CS &amp; AI at AASTMT, with hands-on work in product development, QA, and AI evaluation.</p>
         </div>
         <div class="bento-grid">
           <article class="glass-card bento-card reveal">
             <div class="bento-top"><span>Products shipped</span><span class="bento-icon" aria-hidden="true">↗</span></div>
             <h3><span class="counter" data-target="10">0</span><span class="bento-accent">+</span></h3>
-            <p>From early prototypes to useful releases.</p>
+            <p>Web, mobile, desktop, and AI projects shipped.</p>
           </article>
           <article class="glass-card bento-card reveal">
             <div class="bento-top"><span>Currently learning</span><span class="bento-icon" aria-hidden="true">⌘</span></div>
@@ -405,12 +421,12 @@
           <article class="glass-card bento-card reveal">
             <div class="bento-top"><span>Quality mindset</span><span class="bento-icon" aria-hidden="true">◎</span></div>
             <h3>Global QA <span class="bento-accent">&amp; AI Evaluator</span></h3>
-            <p>Testing software and evaluating AI for real-world use.</p>
+            <p>Manual QA, software testing, and AI response evaluation.</p>
           </article>
           <article class="glass-card bento-card reveal">
             <div class="bento-top"><span>Community</span><span class="bento-icon" aria-hidden="true">✳</span></div>
             <h3>ECPC &amp; ACPC <span class="bento-accent">Organizer</span></h3>
-            <p>Supporting regional programming competitions and contestants.</p>
+            <p>Helping run Egypt’s university programming contests.</p>
           </article>
         </div>
       </div>
@@ -419,8 +435,8 @@
     <section id="projects" aria-labelledby="projects-title">
       <div class="projects-top">
         <div class="section-heading reveal">
-          <span class="eyebrow">Selected work · 01—05</span>
-          <h2 id="projects-title">Made to be useful.</h2>
+          <span class="eyebrow">Selected builds · 01—05</span>
+          <h2 id="projects-title">Projects I’ve shipped.</h2>
         </div>
         <div class="projects-controls" aria-label="Featured project navigation">
           <span class="project-count" aria-live="polite">01 / 05</span>
@@ -438,24 +454,24 @@
       <div class="project-viewport">
         <div class="project-track">
           <article class="glass-card project-card reveal" data-project="egypt">
-            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>EgyptLore · Discover</span></div><div class="window-ui"><div class="ui-rail"><i></i><i></i><i></i></div><div class="ui-main"><span class="ui-line"></span><i class="ui-tile"></i><i class="ui-tile"></i><i class="ui-tile"></i></div></div></div>
-            <div class="project-info"><span class="mono">01 / Travel discovery</span><h3>EgyptLore</h3><p>Explore Egypt through an interactive travel app connecting destinations, stories, and maps.</p><div class="tech-pills"><span>Flutter</span><span>Supabase</span><span>Maps</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
+            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>EgyptLore · Map</span></div><div class="window-ui preview-map" aria-hidden="true"><span class="map-label">ALEXANDRIA · EGYPT</span><span class="map-route"></span><i class="map-pin"></i></div></div>
+            <div class="project-info"><span class="mono">01 / Travel discovery</span><h3>EgyptLore</h3><p>A Flutter city guide for discovering places, local stories, and routes.</p><div class="tech-pills"><span>Flutter</span><span>Supabase</span><span>Maps</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
           </article>
           <article class="glass-card project-card reveal" data-project="engz">
-            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>Engz Web · Workspace</span></div><div class="window-ui"><div class="ui-rail"><i></i><i></i><i></i></div><div class="ui-main"><span class="ui-line"></span><i class="ui-tile"></i><i class="ui-tile"></i><i class="ui-tile"></i></div></div></div>
-            <div class="project-info"><span class="mono">02 / SaaS concept</span><h3>Engz Web</h3><p>A standalone web utility shaped through product architecture, interface design, and database planning.</p><div class="tech-pills"><span>Product design</span><span>Web</span><span>SQL</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
+            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>Engz Web · Overview</span></div><div class="window-ui preview-dashboard" aria-hidden="true"><span class="dash-top"></span><div class="dash-metrics"><i></i><i></i><i></i></div><span class="dash-chart"></span></div></div>
+            <div class="project-info"><span class="mono">02 / Web platform</span><h3>Engz Web</h3><p>A planned web utility with a dashboard, data model, and focused workflows.</p><div class="tech-pills"><span>Product design</span><span>Web</span><span>SQL</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
           </article>
           <article class="glass-card project-card reveal" data-project="aether">
-            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>AetherCode · AI Lab</span></div><div class="window-ui"><div class="ui-rail"><i></i><i></i><i></i></div><div class="ui-main"><span class="ui-line"></span><i class="ui-tile"></i><i class="ui-tile"></i><i class="ui-tile"></i></div></div></div>
-            <div class="project-info"><span class="mono">03 / AI platform</span><h3>AetherCode AI</h3><p>AI-powered workspace for code generation, debugging, workflow automation, and creative tools.</p><div class="tech-pills"><span>AI Agents</span><span>Automation</span><span>SaaS</span></div><a class="project-link" href="https://aether-code-ai.vercel.app/" target="_blank" rel="noopener noreferrer"><span>Visit AetherCode</span><span aria-hidden="true">↗</span></a></div>
+            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>AetherCode · Agent</span></div><div class="window-ui preview-code" aria-hidden="true"><div class="code-pane"><i></i><i></i><i></i></div><div class="code-pane"><i></i><i></i><i></i></div></div></div>
+            <div class="project-info"><span class="mono">03 / AI coding workspace</span><h3>AetherCode AI</h3><p>An AI coding workspace for agent runs, code edits, and debugging.</p><div class="tech-pills"><span>AI Agents</span><span>Automation</span><span>SaaS</span></div><a class="project-link" href="https://aether-code-ai.vercel.app/" target="_blank" rel="noopener noreferrer"><span>Visit AetherCode</span><span aria-hidden="true">↗</span></a></div>
           </article>
           <article class="glass-card project-card reveal" data-project="pdf">
-            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>SabaePDF · Tools</span></div><div class="window-ui"><div class="ui-rail"><i></i><i></i><i></i></div><div class="ui-main"><span class="ui-line"></span><i class="ui-tile"></i><i class="ui-tile"></i><i class="ui-tile"></i></div></div></div>
-            <div class="project-info"><span class="mono">04 / Document tools</span><h3>SabaePDF PRO</h3><p>Manage and edit PDF documents with simple, streamlined conversion workflows.</p><div class="tech-pills"><span>PDF tools</span><span>Web</span><span>Product design</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
+            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>SabaePDF · Workspace</span></div><div class="window-ui preview-pdf" aria-hidden="true"><div class="pdf-tools"><i></i><i></i><i></i></div><div class="pdf-page"><i></i><i></i><i></i><i></i><i></i></div></div></div>
+            <div class="project-info"><span class="mono">04 / PDF workspace</span><h3>SabaePDF PRO</h3><p>A document workspace for editing PDFs and running everyday conversions.</p><div class="tech-pills"><span>PDF tools</span><span>Web</span><span>Product design</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
           </article>
           <article class="glass-card project-card reveal" data-project="quickcv">
-            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>QuickCV · Resume</span></div><div class="window-ui"><div class="ui-rail"><i></i><i></i><i></i></div><div class="ui-main"><span class="ui-line"></span><i class="ui-tile"></i><i class="ui-tile"></i><i class="ui-tile"></i></div></div></div>
-            <div class="project-info"><span class="mono">05 / Career toolkit</span><h3>QuickCV</h3><p>Create a polished résumé and export a professional PDF in just a few steps.</p><div class="tech-pills"><span>Web app</span><span>PDF</span><span>UX</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
+            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>QuickCV · Resume</span></div><div class="window-ui preview-cv" aria-hidden="true"><span class="cv-side"></span><span class="cv-body"><i></i><i></i><i></i><i></i><i></i></span></div></div>
+            <div class="project-info"><span class="mono">05 / CV builder</span><h3>QuickCV</h3><p>Build a résumé and export a clean, ready-to-send PDF.</p><div class="tech-pills"><span>Web app</span><span>PDF</span><span>UX</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
           </article>
         </div>
       </div>
@@ -464,23 +480,23 @@
 
     <section id="works" aria-labelledby="works-title">
       <div class="wrap">
-        <div class="section-heading reveal"><span class="eyebrow">More from the studio</span><h2 id="works-title">Small teams. Big ideas.</h2><p>A few more builds across AI storytelling, desktop software, mobile, and retail.</p></div>
+        <div class="section-heading reveal"><span class="eyebrow">Other shipped work</span><h2 id="works-title">Web, desktop &amp; mobile.</h2><p>Four more projects, from clinic software to an Alexandria streetwear store.</p></div>
         <div class="works-grid">
           <article class="glass-card work-card reveal" data-work="waratha">
             <div class="work-preview"><div class="work-window"><div class="work-window-top"><i></i><i></i><i></i></div><div class="work-window-content"><i></i><i></i><i></i></div></div></div>
-            <div class="work-copy"><span class="mono">01 / AI storytelling</span><h3>Waratha Universe</h3><p>Personalized, AI-powered storybooks built to spark children’s imagination.</p><div class="tech-pills"><span>AI</span><span>Storytelling</span><span>Web</span></div><div class="work-bottom"><span class="mono">Digital product</span><a href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+            <div class="work-copy"><span class="mono">01 / AI storytelling</span><h3>Waratha Universe</h3><p>Personalized storybooks generated with AI for young readers.</p><div class="tech-pills"><span>AI</span><span>Storytelling</span><span>Web</span></div><div class="work-bottom"><span class="mono">Digital product</span><a href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
           </article>
           <article class="glass-card work-card reveal" data-work="clinic">
             <div class="work-preview"><div class="work-window"><div class="work-window-top"><i></i><i></i><i></i></div><div class="work-window-content"><i></i><i></i><i></i></div></div></div>
-            <div class="work-copy"><span class="mono">02 / Clinic operations</span><h3>ClinicEase</h3><p>A desktop app that makes everyday clinic workflows easier to manage.</p><div class="tech-pills"><span>Java</span><span>JavaFX</span><span>Desktop</span></div><div class="work-bottom"><span class="mono">Desktop software</span><a href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+            <div class="work-copy"><span class="mono">02 / Clinic operations</span><h3>ClinicEase</h3><p>JavaFX desktop software for day-to-day clinic management.</p><div class="tech-pills"><span>Java</span><span>JavaFX</span><span>Desktop</span></div><div class="work-bottom"><span class="mono">Desktop software</span><a href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
           </article>
           <article class="glass-card work-card reveal" data-work="path">
             <div class="work-preview"><div class="work-window"><div class="work-window-top"><i></i><i></i><i></i></div><div class="work-window-content"><i></i><i></i><i></i></div></div></div>
-            <div class="work-copy"><span class="mono">03 / AI-assisted Android</span><h3>Path Weaver</h3><p>Explore guided paths with an Android experience powered by Gemini.</p><div class="tech-pills"><span>Kotlin</span><span>Android</span><span>Gemini</span></div><div class="work-bottom"><span class="mono">Mobile app</span><a href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+            <div class="work-copy"><span class="mono">03 / AI-assisted Android</span><h3>Path Weaver</h3><p>A Kotlin Android app that builds guided paths with Gemini.</p><div class="tech-pills"><span>Kotlin</span><span>Android</span><span>Gemini</span></div><div class="work-bottom"><span class="mono">Mobile app</span><a href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
           </article>
           <article class="glass-card work-card reveal" data-work="ateeq">
             <div class="work-preview"><div class="work-window"><div class="work-window-top"><i></i><i></i><i></i></div><div class="work-window-content"><i></i><i></i><i></i></div></div></div>
-            <div class="work-copy"><span class="mono">04 / Alexandria streetwear</span><h3>Ateeq Store</h3><p>A co-founded streetwear storefront with a distinctive digital identity.</p><div class="tech-pills"><span>E-commerce</span><span>Branding</span><span>Web</span></div><div class="work-bottom"><span class="mono">Retail experience</span><a href="https://ateeq-store-weld.vercel.app/#home" target="_blank" rel="noopener noreferrer">Visit store ↗</a></div></div>
+            <div class="work-copy"><span class="mono">04 / Alexandria streetwear</span><h3>Ateeq Store</h3><p>An independent streetwear label and e-commerce site based in Alexandria.</p><div class="tech-pills"><span>E-commerce</span><span>Branding</span><span>Web</span></div><div class="work-bottom"><span class="mono">Retail experience</span><a href="https://ateeq-store-weld.vercel.app/#home" target="_blank" rel="noopener noreferrer">Visit store ↗</a></div></div>
           </article>
         </div>
       </div>
@@ -488,15 +504,15 @@
 
     <section id="automation" aria-labelledby="automation-title">
       <div class="automation-shell">
-        <div class="section-heading reveal"><span class="eyebrow">Dedicated showcase</span><h2 id="automation-title">Automation, <span class="bento-accent">in motion.</span></h2><p>Focused scripts and workflows, presented separately from product builds.</p></div>
+        <div class="section-heading reveal"><span class="eyebrow">Python scripts</span><h2 id="automation-title">Automating routine work.</h2><p>Small scripts for repeatable social publishing and account workflows.</p></div>
         <div class="automation-grid">
           <article class="automation-card reveal">
             <div class="terminal" aria-label="Animated terminal preview"><div class="terminal-bar"><i></i><i></i><i></i> workflow.sh</div><span class="terminal-line">&gt; workflow.connect("facebook")</span><span class="terminal-line">&gt; queue.status: ready</span><span class="terminal-line">&gt; task.run() ✓ complete<span class="terminal-cursor"></span></span></div>
-            <div class="automation-copy"><span class="mono">Script 01 / Social workflow</span><h3>Facebook Automation Script</h3><p>Streamline repetitive Facebook workflows with clear, configurable automation.</p><div class="tech-pills"><span>Python</span><span>Automation</span><span>Workflow</span></div><div class="automation-bottom"><span class="mono">Script preview</span><a class="automation-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+            <div class="automation-copy"><span class="mono">Script 01 / Social workflow</span><h3>Facebook workflow scripts</h3><p>Python scripts for routine Facebook tasks and repeatable workflows.</p><div class="tech-pills"><span>Python</span><span>Automation</span><span>Workflow</span></div><div class="automation-bottom"><span class="mono">Script preview</span><a class="automation-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
           </article>
           <article class="automation-card reveal">
             <div class="terminal" aria-label="Animated terminal preview"><div class="terminal-bar"><i></i><i></i><i></i> workflow.sh</div><span class="terminal-line">&gt; workflow.connect("x")</span><span class="terminal-line">&gt; queue.status: ready</span><span class="terminal-line">&gt; task.run() ✓ complete<span class="terminal-cursor"></span></span></div>
-            <div class="automation-copy"><span class="mono">Script 02 / Social workflow</span><h3>Twitter (X) Automation Script</h3><p>Support scheduled publishing and routine X workflows through focused scripts.</p><div class="tech-pills"><span>Python</span><span>Automation</span><span>Scheduling</span></div><div class="automation-bottom"><span class="mono">Script preview</span><a class="automation-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
+            <div class="automation-copy"><span class="mono">Script 02 / Social workflow</span><h3>X publishing scripts</h3><p>Python helpers for scheduled posts and common X account tasks.</p><div class="tech-pills"><span>Python</span><span>Automation</span><span>Scheduling</span></div><div class="automation-bottom"><span class="mono">Script preview</span><a class="automation-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div></div>
           </article>
         </div>
       </div>
@@ -504,11 +520,11 @@
 
     <section id="services" aria-labelledby="services-title">
       <div class="wrap">
-        <div class="section-heading reveal"><span class="eyebrow">How I can help</span><h2 id="services-title">Good work, thoughtfully made.</h2><p>Open a service to see where I can help your team move forward.</p></div>
+        <div class="section-heading reveal"><span class="eyebrow">Ways I can contribute</span><h2 id="services-title">Build, test, automate.</h2><p>Web development, software QA, and practical task automation.</p></div>
         <div class="accordion">
-          <article class="service-row open"><h3><button class="service-trigger" type="button" aria-expanded="true" aria-controls="service-panel-1"><span class="service-num">01</span><strong>Full-stack web &amp; SaaS development</strong><span class="service-plus" aria-hidden="true"></span></button></h3><div class="service-panel" id="service-panel-1"><div class="service-panel-inner"><p>Responsive product experiences, practical integrations, and maintainable web applications shaped around real users.</p><div class="service-tags"><span>Web apps</span><span>SaaS products</span><span>Responsive UI</span><span>API integration</span></div></div></div></article>
-          <article class="service-row"><h3><button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-panel-2"><span class="service-num">02</span><strong>Software QA &amp; AI evaluation</strong><span class="service-plus" aria-hidden="true"></span></button></h3><div class="service-panel" id="service-panel-2"><div class="service-panel-inner"><p>Structured exploratory testing, actionable bug reports, and careful bilingual AI model evaluation.</p><div class="service-tags"><span>Functional testing</span><span>Bug reports</span><span>Test cases</span><span>AI evaluation</span></div></div></div></article>
-          <article class="service-row"><h3><button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-panel-3"><span class="service-num">03</span><strong>Custom workflow automation</strong><span class="service-plus" aria-hidden="true"></span></button></h3><div class="service-panel" id="service-panel-3"><div class="service-panel-inner"><p>Dependable scripts for repetitive tasks, designed with clear handoff and platform rules in mind.</p><div class="service-tags"><span>Workflow scripts</span><span>Task automation</span><span>Reliable handoff</span></div></div></div></article>
+          <article class="service-row open"><h3><button class="service-trigger" type="button" aria-expanded="true" aria-controls="service-panel-1"><span class="service-num">01</span><strong>Full-stack web &amp; SaaS development</strong><span class="service-plus" aria-hidden="true"></span></button></h3><div class="service-panel" id="service-panel-1"><div class="service-panel-inner"><p>Build responsive web apps, connect APIs, and ship maintainable product features.</p><div class="service-tags"><span>Web apps</span><span>SaaS products</span><span>Responsive UI</span><span>API integration</span></div></div></div></article>
+          <article class="service-row"><h3><button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-panel-2"><span class="service-num">02</span><strong>Software QA &amp; AI evaluation</strong><span class="service-plus" aria-hidden="true"></span></button></h3><div class="service-panel" id="service-panel-2"><div class="service-panel-inner"><p>Test real user flows, report reproducible bugs, and evaluate Arabic and English AI output.</p><div class="service-tags"><span>Functional testing</span><span>Bug reports</span><span>Test cases</span><span>AI evaluation</span></div></div></div></article>
+          <article class="service-row"><h3><button class="service-trigger" type="button" aria-expanded="false" aria-controls="service-panel-3"><span class="service-num">03</span><strong>Custom workflow automation</strong><span class="service-plus" aria-hidden="true"></span></button></h3><div class="service-panel" id="service-panel-3"><div class="service-panel-inner"><p>Automate repeatable tasks with focused Python scripts and clear handoff notes.</p><div class="service-tags"><span>Workflow scripts</span><span>Task automation</span><span>Reliable handoff</span></div></div></div></article>
         </div>
       </div>
     </section>
@@ -517,8 +533,8 @@
   <footer id="contact">
     <div class="wrap">
       <div class="footer-main">
-        <div><span class="eyebrow">Have a good one in mind?</span><h2 class="footer-title">Let’s make <span>it real.</span></h2></div>
-        <p class="footer-note">Building useful things with good people starts with a conversation. I’d love to hear what you’re working on.</p>
+        <div><span class="eyebrow">Have a project to discuss?</span><h2 class="footer-title">Let’s get <span>to work.</span></h2></div>
+        <p class="footer-note">Tell me what you’re building, where you’re stuck, or what role you need filled.</p>
       </div>
       <div class="footer-links" aria-label="Contact and social links">
         <a class="pill-link primary" href="mailto:mohamedsabae50@gmail.com">Email <span class="arrow" aria-hidden="true">↗</span></a>
@@ -527,7 +543,7 @@
         <a class="pill-link" href="https://www.youtube.com/@silentalgoo" target="_blank" rel="noopener noreferrer">YouTube @silentalgoo <span class="arrow" aria-hidden="true">↗</span></a>
         <a class="pill-link" href="MOHAMED_HAMDY.pdf" target="_blank" rel="noopener">Download CV <span class="arrow" aria-hidden="true">↗</span></a>
       </div>
-      <div class="footer-bottom"><span>© <span id="year">2026</span> Mohamed Hamdy · Made with curiosity.</span><a href="#home">Back to top ↑</a></div>
+      <div class="footer-bottom"><span>© <span id="year">2026</span> Mohamed Hamdy · Alexandria, Egypt.</span><a href="#home">Back to top ↑</a></div>
     </div>
   </footer>
 
