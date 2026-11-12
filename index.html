@@ -181,6 +181,28 @@
     .preview-cv .cv-body { display: grid; align-content: start; gap: 5px; padding-top: 6px; }
     .preview-cv .cv-body i { height: 2px; background: #8A8780; }
     .preview-cv .cv-body i:first-child { width: 75%; height: 4px; background: #484640; }
+    .preview-madar { width: 84%; height: 126px; grid-template-columns: 1fr; grid-template-rows: 1fr; padding: 7px; transform: none; }
+    .madar-store { position: relative; display: grid; grid-template-rows: 15px 1fr 22px; gap: 6px; padding: 7px; border: 1px solid #353539; border-radius: 4px; background: #151517; }
+    .madar-brand { display: flex; align-items: center; justify-content: space-between; color: #E8E2D6; font: 600 8px var(--display); }
+    .madar-brand small { color: #8F8F96; font: 500 6px var(--display); letter-spacing: .12em; }
+    .madar-shop { display: grid; grid-template-columns: 1fr 36px 36px; align-items: center; gap: 6px; }
+    .madar-shop strong { color: #D9D3C7; font: 500 7px var(--display); }
+    .madar-product { height: 34px; border: 1px solid #37373A; border-radius: 3px; background: linear-gradient(140deg,#252522,#171719); }
+    .madar-product:last-child { background: linear-gradient(140deg,#2A2925,#19191B); }
+    .madar-admin-bar { display: flex; align-items: center; justify-content: space-between; gap: 5px; padding: 0 6px; border: 1px solid #393832; border-radius: 3px; background: #20201D; color: #C4C0B5; font: 500 6px var(--display); white-space: nowrap; }
+    .madar-admin-bar i { width: 5px; height: 5px; flex: 0 0 auto; border-radius: 50%; background: #A89A84; }
+    .preview-nahla { width: 86%; height: 126px; grid-template-columns: 20px 1fr 47px; grid-template-rows: 1fr; gap: 6px; padding: 8px; transform: none; }
+    .nahla-tools { display: grid; align-content: start; gap: 6px; padding: 4px; border-radius: 3px; background: #242426; }
+    .nahla-tools i { height: 5px; border-radius: 2px; background: #77777D; }
+    .nahla-paper { display: grid; align-content: start; gap: 5px; padding: 9px 7px; background: #E9E7E1; box-shadow: 0 4px 10px rgba(0,0,0,.28); }
+    .nahla-paper strong { color: #44423D; font: 600 6px var(--display); }
+    .nahla-paper span { height: 2px; background: #A4A19A; }
+    .nahla-paper .editable-line { width: 76%; height: 7px; border: 1px dashed #7E786E; background: #D8D5CD; }
+    .nahla-signature { display: flex; height: 18px; align-items: center; justify-content: center; border: 1px dashed #AAA69D; }
+    .nahla-signature svg { width: 34px; height: 14px; fill: none; stroke: #222; stroke-linecap: round; stroke-width: 1.8; }
+    .nahla-controls { display: grid; align-content: start; gap: 7px; padding-top: 3px; color: #C4C4C8; font: 500 6px var(--display); text-align: center; }
+    .nahla-controls b { padding: 4px 2px; border: 1px solid #3C3C40; border-radius: 3px; color: #D9D3C7; font-size: 7px; white-space: nowrap; }
+    .nahla-slider { height: 3px; margin: 3px 2px; background: linear-gradient(90deg,#77736D 0 43%,#D4D0C8 44% 56%,#77736D 57%); }
     .project-info { display: flex; flex: 1; flex-direction: column; padding: 20px 11px 9px; }
     .project-info .mono { color: #85858B; font-size: 9px; }
     .project-info h3 { margin: 9px 0 7px; font-size: 23px; line-height: 1.15; }
@@ -191,6 +213,8 @@
     .project-link span:last-child { color: var(--cyan); font-size: 16px; }
     .project-link:hover { color: #F4F4F5; }
     .project-link span:last-child { color: #C6A982; font-size: 16px; }
+    .project-links { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: auto; padding-top: 17px; }
+    .project-links .project-link { min-width: 0; margin-top: 0; padding-top: 0; }
     .projects-hint { padding: 0 var(--pad); color: #77777D; font: 500 9px var(--display); letter-spacing: .09em; text-transform: uppercase; }
 
     #works { padding-top: 115px; }
@@ -392,10 +416,10 @@
     <div class="stack-marquee" aria-label="Technology stack">
       <div class="marquee-track">
         <div class="marquee-group">
-          <span class="stack-badge" style="--badge-color:#FFD43B">Python</span><span class="stack-badge" style="--badge-color:#4FC3F7">Flutter</span><span class="stack-badge" style="--badge-color:#61DAFB">React</span><span class="stack-badge" style="--badge-color:#fff">Next.js</span><span class="stack-badge" style="--badge-color:#34D399">Supabase</span><span class="stack-badge" style="--badge-color:#F89820">JavaFX</span><span class="stack-badge" style="--badge-color:#A97BFF">Kotlin</span><span class="stack-badge" style="--badge-color:#818CF8">AI Agents</span><span class="stack-badge" style="--badge-color:#34D399">QA Testing</span><span class="stack-badge" style="--badge-color:#38BDF8">Docker</span>
+          <span class="stack-badge" style="--badge-color:#FFD43B">Python</span><span class="stack-badge" style="--badge-color:#4FC3F7">Flutter</span><span class="stack-badge" style="--badge-color:#61DAFB">React</span><span class="stack-badge" style="--badge-color:#fff">Next.js</span><span class="stack-badge" style="--badge-color:#34D399">Supabase</span><span class="stack-badge" style="--badge-color:#F89820">JavaFX</span><span class="stack-badge" style="--badge-color:#A97BFF">Kotlin</span><span class="stack-badge" style="--badge-color:#818CF8">AI Agents</span><span class="stack-badge" style="--badge-color:#34D399">QA Testing</span><span class="stack-badge" style="--badge-color:#38BDF8">Docker</span><span class="stack-badge">Tailwind CSS</span><span class="stack-badge">PostgreSQL RLS</span><span class="stack-badge">C# / .NET</span><span class="stack-badge">PDF.js</span><span class="stack-badge">HTML5 Canvas</span><span class="stack-badge">Playwright</span>
         </div>
         <div class="marquee-group" aria-hidden="true">
-          <span class="stack-badge" style="--badge-color:#FFD43B">Python</span><span class="stack-badge" style="--badge-color:#4FC3F7">Flutter</span><span class="stack-badge" style="--badge-color:#61DAFB">React</span><span class="stack-badge" style="--badge-color:#fff">Next.js</span><span class="stack-badge" style="--badge-color:#34D399">Supabase</span><span class="stack-badge" style="--badge-color:#F89820">JavaFX</span><span class="stack-badge" style="--badge-color:#A97BFF">Kotlin</span><span class="stack-badge" style="--badge-color:#818CF8">AI Agents</span><span class="stack-badge" style="--badge-color:#34D399">QA Testing</span><span class="stack-badge" style="--badge-color:#38BDF8">Docker</span>
+          <span class="stack-badge" style="--badge-color:#FFD43B">Python</span><span class="stack-badge" style="--badge-color:#4FC3F7">Flutter</span><span class="stack-badge" style="--badge-color:#61DAFB">React</span><span class="stack-badge" style="--badge-color:#fff">Next.js</span><span class="stack-badge" style="--badge-color:#34D399">Supabase</span><span class="stack-badge" style="--badge-color:#F89820">JavaFX</span><span class="stack-badge" style="--badge-color:#A97BFF">Kotlin</span><span class="stack-badge" style="--badge-color:#818CF8">AI Agents</span><span class="stack-badge" style="--badge-color:#34D399">QA Testing</span><span class="stack-badge" style="--badge-color:#38BDF8">Docker</span><span class="stack-badge">Tailwind CSS</span><span class="stack-badge">PostgreSQL RLS</span><span class="stack-badge">C# / .NET</span><span class="stack-badge">PDF.js</span><span class="stack-badge">HTML5 Canvas</span><span class="stack-badge">Playwright</span>
         </div>
       </div>
     </div>
@@ -410,7 +434,7 @@
         <div class="bento-grid">
           <article class="glass-card bento-card reveal">
             <div class="bento-top"><span>Products shipped</span><span class="bento-icon" aria-hidden="true">↗</span></div>
-            <h3><span class="counter" data-target="10">0</span><span class="bento-accent">+</span></h3>
+            <h3><span class="counter" data-target="12">0</span><span class="bento-accent">+</span></h3>
             <p>Web, mobile, desktop, and AI projects shipped.</p>
           </article>
           <article class="glass-card bento-card reveal">
@@ -435,17 +459,19 @@
     <section id="projects" aria-labelledby="projects-title">
       <div class="projects-top">
         <div class="section-heading reveal">
-          <span class="eyebrow">Selected builds · 01—05</span>
+          <span class="eyebrow">Selected builds · 01—07</span>
           <h2 id="projects-title">Projects I’ve shipped.</h2>
         </div>
         <div class="projects-controls" aria-label="Featured project navigation">
-          <span class="project-count" aria-live="polite">01 / 05</span>
+          <span class="project-count" aria-live="polite">01 / 07</span>
           <button class="project-control projects-prev" type="button" aria-label="Previous featured project" disabled>← Prev</button>
           <button class="project-control projects-next" type="button" aria-label="Next featured project">Next →</button>
         </div>
       </div>
       <div class="project-dots" role="group" aria-label="Choose a featured project">
-        <button class="project-dot" type="button" aria-label="Show EgyptLore" aria-current="true"></button>
+        <button class="project-dot" type="button" aria-label="Show MADAR Perfumes" aria-current="true"></button>
+        <button class="project-dot" type="button" aria-label="Show Nahla Scanner" aria-current="false"></button>
+        <button class="project-dot" type="button" aria-label="Show EgyptLore" aria-current="false"></button>
         <button class="project-dot" type="button" aria-label="Show Engz Web" aria-current="false"></button>
         <button class="project-dot" type="button" aria-label="Show AetherCode AI" aria-current="false"></button>
         <button class="project-dot" type="button" aria-label="Show SabaePDF PRO" aria-current="false"></button>
@@ -453,25 +479,33 @@
       </div>
       <div class="project-viewport">
         <div class="project-track">
+          <article class="glass-card project-card reveal" data-project="madar">
+            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>MADAR · Storefront + ERP</span></div><div class="window-ui preview-madar" aria-hidden="true"><div class="madar-store"><div class="madar-brand"><span>مدار · MADAR</span><small>AR / EN</small></div><div class="madar-shop"><strong>FRAGRANCE · عطور</strong><i class="madar-product"></i><i class="madar-product"></i></div><div class="madar-admin-bar"><i></i><span>Admin ERP</span><span>postgres_changes · LIVE</span></div></div></div></div>
+            <div class="project-info"><span class="mono">01 / Bilingual commerce</span><h3>MADAR Perfumes</h3><p>An Arabic/English storefront with a decoupled visual Admin ERP and live PostgreSQL sync.</p><div class="tech-pills"><span>React</span><span>Tailwind CSS</span><span>Supabase RLS</span><span>Playwright</span></div><div class="project-links"><a class="project-link" href="https://github.com/mohamedsabae50-prog/madar-perfumes" target="_blank" rel="noopener noreferrer"><span>Storefront ↗</span></a><a class="project-link" href="https://github.com/mohamedsabae50-prog/madar-admin" target="_blank" rel="noopener noreferrer"><span>Admin ERP ↗</span></a></div></div>
+          </article>
+          <article class="glass-card project-card reveal" data-project="nahla">
+            <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>Nahla · Offline PDF Studio</span></div><div class="window-ui preview-nahla" aria-hidden="true"><div class="nahla-tools"><i></i><i></i><i></i></div><div class="nahla-paper"><strong>PDF · editable text</strong><span></span><span class="editable-line"></span><span></span><div class="nahla-signature"><svg viewBox="0 0 42 18"><path d="M3 13c4-7 5-7 5-1s2 5 6-4 5-6 4 2 2 7 6-1 5-4 4 2 2 3 6-3"/></svg></div></div><div class="nahla-controls"><b>&lt;350ms</b><span>Stroke</span><div class="nahla-slider"></div><span>-3&nbsp; .. &nbsp;+8</span></div></div></div>
+            <div class="project-info"><span class="mono">02 / Offline document suite</span><h3>Nahla Scanner</h3><p>An offline Android scanner and native Windows PDF suite with in-place editing and signature cleanup.</p><div class="tech-pills"><span>Kotlin</span><span>C# / .NET</span><span>PDF.js</span><span>HTML5 Canvas</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog/DocumentScanner" target="_blank" rel="noopener noreferrer"><span>Repository ↗</span></a></div>
+          </article>
           <article class="glass-card project-card reveal" data-project="egypt">
             <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>EgyptLore · Map</span></div><div class="window-ui preview-map" aria-hidden="true"><span class="map-label">ALEXANDRIA · EGYPT</span><span class="map-route"></span><i class="map-pin"></i></div></div>
-            <div class="project-info"><span class="mono">01 / Travel discovery</span><h3>EgyptLore</h3><p>A Flutter city guide for discovering places, local stories, and routes.</p><div class="tech-pills"><span>Flutter</span><span>Supabase</span><span>Maps</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
+            <div class="project-info"><span class="mono">03 / Travel discovery</span><h3>EgyptLore</h3><p>A Flutter city guide for discovering places, local stories, and routes.</p><div class="tech-pills"><span>Flutter</span><span>Supabase</span><span>Maps</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
           </article>
           <article class="glass-card project-card reveal" data-project="engz">
             <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>Engz Web · Overview</span></div><div class="window-ui preview-dashboard" aria-hidden="true"><span class="dash-top"></span><div class="dash-metrics"><i></i><i></i><i></i></div><span class="dash-chart"></span></div></div>
-            <div class="project-info"><span class="mono">02 / Web platform</span><h3>Engz Web</h3><p>A planned web utility with a dashboard, data model, and focused workflows.</p><div class="tech-pills"><span>Product design</span><span>Web</span><span>SQL</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
+            <div class="project-info"><span class="mono">04 / Web platform</span><h3>Engz Web</h3><p>A planned web utility with a dashboard, data model, and focused workflows.</p><div class="tech-pills"><span>Product design</span><span>Web</span><span>SQL</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
           </article>
           <article class="glass-card project-card reveal" data-project="aether">
             <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>AetherCode · Agent</span></div><div class="window-ui preview-code" aria-hidden="true"><div class="code-pane"><i></i><i></i><i></i></div><div class="code-pane"><i></i><i></i><i></i></div></div></div>
-            <div class="project-info"><span class="mono">03 / AI coding workspace</span><h3>AetherCode AI</h3><p>An AI coding workspace for agent runs, code edits, and debugging.</p><div class="tech-pills"><span>AI Agents</span><span>Automation</span><span>SaaS</span></div><a class="project-link" href="https://aether-code-ai.vercel.app/" target="_blank" rel="noopener noreferrer"><span>Visit AetherCode</span><span aria-hidden="true">↗</span></a></div>
+            <div class="project-info"><span class="mono">05 / AI coding workspace</span><h3>AetherCode AI</h3><p>An AI coding workspace for agent runs, code edits, and debugging.</p><div class="tech-pills"><span>AI Agents</span><span>Automation</span><span>SaaS</span></div><a class="project-link" href="https://aether-code-ai.vercel.app/" target="_blank" rel="noopener noreferrer"><span>Visit AetherCode</span><span aria-hidden="true">↗</span></a></div>
           </article>
           <article class="glass-card project-card reveal" data-project="pdf">
             <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>SabaePDF · Workspace</span></div><div class="window-ui preview-pdf" aria-hidden="true"><div class="pdf-tools"><i></i><i></i><i></i></div><div class="pdf-page"><i></i><i></i><i></i><i></i><i></i></div></div></div>
-            <div class="project-info"><span class="mono">04 / PDF workspace</span><h3>SabaePDF PRO</h3><p>A document workspace for editing PDFs and running everyday conversions.</p><div class="tech-pills"><span>PDF tools</span><span>Web</span><span>Product design</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
+            <div class="project-info"><span class="mono">06 / PDF workspace</span><h3>SabaePDF PRO</h3><p>A document workspace for editing PDFs and running everyday conversions.</p><div class="tech-pills"><span>PDF tools</span><span>Web</span><span>Product design</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
           </article>
           <article class="glass-card project-card reveal" data-project="quickcv">
             <div class="project-window"><div class="window-bar"><i></i><i></i><i></i><span>QuickCV · Resume</span></div><div class="window-ui preview-cv" aria-hidden="true"><span class="cv-side"></span><span class="cv-body"><i></i><i></i><i></i><i></i><i></i></span></div></div>
-            <div class="project-info"><span class="mono">05 / CV builder</span><h3>QuickCV</h3><p>Build a résumé and export a clean, ready-to-send PDF.</p><div class="tech-pills"><span>Web app</span><span>PDF</span><span>UX</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
+            <div class="project-info"><span class="mono">07 / CV builder</span><h3>QuickCV</h3><p>Build a résumé and export a clean, ready-to-send PDF.</p><div class="tech-pills"><span>Web app</span><span>PDF</span><span>UX</span></div><a class="project-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer"><span>Explore project</span><span aria-hidden="true">↗</span></a></div>
           </article>
         </div>
       </div>
