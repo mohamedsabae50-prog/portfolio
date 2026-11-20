@@ -70,13 +70,13 @@
     :focus-visible { outline: 2px solid #C6A982; outline-offset: 4px; }
     .page-progress { position: fixed; z-index: 30; inset: 0 0 auto; height: 2px; transform: scaleX(0); transform-origin: left center; background: #C6A982; pointer-events: none; }
 
-    .site-nav { position: fixed; z-index: 15; top: 14px; left: 50%; display: flex; width: min(calc(100% - 32px), 1120px); min-height: 58px; align-items: center; justify-content: space-between; gap: 20px; padding: 0 22px; transform: translateX(-50%); border: 1px solid #29292D; border-radius: 999px; background: rgba(18,18,20,.88); box-shadow: 0 12px 38px rgba(0,0,0,.3); backdrop-filter: blur(20px); }
+    .site-nav { position: fixed; z-index: 15; top: 14px; left: 50%; display: flex; width: min(calc(100% - 32px), 1160px); min-height: 58px; align-items: center; justify-content: space-between; gap: 16px; padding: 0 22px; transform: translateX(-50%); border: 1px solid #29292D; border-radius: 999px; background: rgba(18,18,20,.88); box-shadow: 0 12px 38px rgba(0,0,0,.3); backdrop-filter: blur(20px); }
     .brand { white-space: nowrap; font: 700 14px var(--display); letter-spacing: -.04em; text-decoration: none; }
     .brand-tag { margin-left: 9px; color: #85858B; font: 500 9px/1.5 Consolas, monospace; letter-spacing: .04em; }
-    .nav-links { display: flex; align-items: center; gap: clamp(15px, 2.5vw, 34px); }
-    .nav-links a { color: #C4C4C8; font-size: 11px; text-decoration: none; transition: color .2s; }
+    .nav-links { display: flex; align-items: center; gap: clamp(12px, 1.9vw, 24px); }
+    .nav-links a { color: #C4C4C8; font-size: 11px; white-space: nowrap; text-decoration: none; transition: color .2s; }
     .nav-links a:hover { color: #FAFAFA; }
-    .nav-cta { min-height: 38px; padding: 0 15px; font-size: 11px; }
+    .nav-cta { min-height: 38px; padding: 0 15px; font-size: 11px; white-space: nowrap; }
     .nav-toggle { display: none; }
 
     #home { position: relative; display: flex; min-height: max(760px, 100svh); align-items: center; overflow: hidden; padding: 116px var(--pad) 62px; isolation: isolate; }
@@ -110,7 +110,7 @@
     .stack-badge::before { width: 6px; height: 6px; border-radius: 50%; background: #A89A84; content: ""; }
     @keyframes marquee { to { transform: translateX(-50%); } }
 
-    #about, #works, #automation, #services { padding: clamp(84px, 10vw, 142px) var(--pad); }
+    #about, #works, #automation, #media, #photography, #services { padding: clamp(84px, 10vw, 142px) var(--pad); }
     #about { position: relative; overflow: hidden; }
     .bento-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 15px; }
     .bento-card { min-height: 224px; padding: 23px; }
@@ -210,7 +210,6 @@
     .tech-pills { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
     .tech-pills span { padding: 6px 9px; border: 1px solid #303034; border-radius: 999px; background: #18181B; color: #C4C4C8; font: 500 9px var(--display); }
     .project-link { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: auto; padding-top: 17px; color: #D4D4D8; font-size: 10px; font-weight: 700; text-decoration: none; }
-    .project-link span:last-child { color: var(--cyan); font-size: 16px; }
     .project-link:hover { color: #F4F4F5; }
     .project-link span:last-child { color: #C6A982; font-size: 16px; }
     .project-links { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: auto; padding-top: 17px; }
@@ -236,8 +235,8 @@
     .work-bottom a, .automation-link { color: #D4D4D8; font-size: 10px; font-weight: 700; text-decoration: none; }
     .work-bottom a:hover, .automation-link:hover { color: #C6A982; }
 
-    #automation { padding: 40px 0 142px; }
-    .automation-shell { padding: clamp(24px,4vw,48px); border: 1px solid #29292D; border-radius: 28px; background: #111113; }
+    #automation { padding: 40px var(--pad) 90px; }
+    .automation-shell { width: min(100%, 1280px); margin-inline: auto; padding: clamp(24px,4vw,48px); border: 1px solid #29292D; border-radius: 28px; background: #111113; }
     .automation-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
     .automation-card { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: #0C0C0E; }
     .terminal { min-height: 148px; padding: 15px 18px; border-bottom: 1px solid var(--line); background: #0D0D0F; color: #C6A982; font: 10px/1.9 Consolas,monospace; }
@@ -253,10 +252,72 @@
     @keyframes terminal-in { from { max-width: 0; } to { max-width: 100%; } }
     @keyframes blink { 50% { opacity: 0; } }
     .automation-copy { padding: 19px 21px 22px; }
-    .automation-copy .mono { color: #8492AB; font-size: 9px; }
+    .automation-copy .mono { color: #85858B; font-size: 9px; }
     .automation-copy h3 { margin: 8px 0; font-size: 19px; }
     .automation-copy p { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.6; }
     .automation-bottom { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 14px; }
+
+    /* ================= YOUTUBE CHANNELS ================= */
+    #media { padding-top: 32px; padding-bottom: 84px; }
+    .media-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .channel-card { display: flex; flex-direction: column; }
+    .channel-stage { position: relative; display: grid; height: 158px; place-items: center; overflow: hidden; border-bottom: 1px solid var(--line); background: #141416; padding: 16px; }
+    .channel-stage::before { position: absolute; inset: 0; background: repeating-linear-gradient(90deg, transparent 0 32px, rgba(255,255,255,.02) 33px 34px); content: ""; }
+    .channel-player { position: relative; z-index: 1; display: grid; width: min(100%, 340px); height: 112px; grid-template-rows: 1fr 22px; padding: 12px 14px; border: 1px solid #303036; border-radius: 12px; background: #0E0E10; box-shadow: 0 14px 28px rgba(0,0,0,.35); transition: transform .35s, border-color .25s; }
+    .channel-card:hover .channel-player { transform: translateY(-3px); border-color: #44444C; }
+    .channel-player-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .channel-play { display: grid; width: 38px; height: 38px; flex: 0 0 auto; place-items: center; border: 1px solid #3B3B42; border-radius: 50%; background: #19191D; color: #C6A982; transition: background .25s, border-color .25s; }
+    .channel-card:hover .channel-play { border-color: #C6A982; background: #211E1A; }
+    .channel-play svg { width: 13px; height: 13px; fill: currentColor; transform: translateX(1px); }
+    .channel-meta { flex: 1; min-width: 0; }
+    .channel-meta strong { display: block; color: #F4F4F5; font: 600 13px var(--display); letter-spacing: -.02em; }
+    .channel-meta span { color: #8F8F96; font: 500 10px Consolas, monospace; }
+    .channel-badge { padding: 4px 8px; border: 1px solid #303034; border-radius: 6px; background: #18181B; color: #C6A982; font: 600 9px var(--display); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+    .channel-scrubber { display: flex; align-items: center; gap: 9px; align-self: end; }
+    .channel-scrubber i { flex: 1; height: 3px; border-radius: 99px; background: linear-gradient(90deg, #C6A982 0 42%, #2B2B30 42%); }
+    .channel-scrubber span { color: #77777D; font: 500 9px Consolas, monospace; }
+    .channel-copy { display: flex; flex: 1; flex-direction: column; padding: 20px 22px 22px; }
+    .channel-copy .mono { color: #85858B; font-size: 9px; }
+    .channel-copy h3 { margin: 8px 0 7px; font-size: 22px; line-height: 1.15; }
+    .channel-copy p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.65; }
+    .channel-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: auto; padding-top: 18px; }
+    .channel-footer a { display: inline-flex; align-items: center; gap: 8px; color: #F4F4F5; font-size: 11px; font-weight: 600; text-decoration: none; transition: color .2s; }
+    .channel-footer a:hover { color: #C6A982; }
+
+    /* ================= PHOTOGRAPHY GALLERY & LIGHTBOX ================= */
+    #photography { padding-top: 84px; padding-bottom: 92px; border-top: 1px solid var(--line); background: #0C0C0E; }
+    .photo-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 32px; }
+    .photo-head .section-heading { margin-bottom: 0; }
+    .photo-counter-pill { display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border: 1px solid #2A2A2F; border-radius: 999px; background: #141417; color: #C4C4C8; font: 500 10px var(--display); letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+    .photo-counter-pill i { width: 6px; height: 6px; border-radius: 50%; background: #C6A982; }
+    .photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .photo-card { position: relative; display: block; width: 100%; padding: 8px; text-align: left; cursor: pointer; background: #121214; }
+    .photo-frame { position: relative; overflow: hidden; aspect-ratio: 4 / 3; border-radius: 15px; border: 1px solid rgba(255,255,255,.07); background: #18181B; }
+    .photo-frame img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.22,1,.36,1), filter .35s; }
+    .photo-card:hover .photo-frame img { transform: scale(1.045); }
+    .photo-overlay { position: absolute; right: 10px; bottom: 10px; left: 10px; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; border: 1px solid rgba(255,255,255,.1); border-radius: 11px; background: rgba(10,10,11,.82); backdrop-filter: blur(12px); opacity: .94; transition: opacity .25s, transform .25s; }
+    .photo-card:hover .photo-overlay { opacity: 1; transform: translateY(-2px); }
+    .photo-title { overflow: hidden; color: #F4F4F5; font: 500 11px var(--display); text-overflow: ellipsis; white-space: nowrap; }
+    .photo-expand { flex: 0 0 auto; color: #C6A982; font: 600 10px var(--display); letter-spacing: .06em; text-transform: uppercase; }
+    .photo-empty { grid-column: 1 / -1; padding: 40px 26px; border: 1px dashed #2E2E34; border-radius: 20px; background: #121214; text-align: center; }
+    .photo-empty strong { display: block; margin-bottom: 8px; font: 600 16px var(--display); color: #F4F4F5; }
+    .photo-empty p { max-width: 520px; margin: 0 auto; color: var(--muted); font-size: 12px; line-height: 1.75; }
+    .photo-empty code { padding: 2px 7px; border: 1px solid #2C2C32; border-radius: 6px; background: #1A1A1E; color: #C6A982; font: 11px Consolas, monospace; }
+
+    .lightbox { position: fixed; z-index: 60; inset: 0; display: grid; place-items: center; padding: clamp(16px, 3vw, 32px); background: rgba(7,7,8,.92); backdrop-filter: blur(18px); opacity: 0; visibility: hidden; pointer-events: none; transition: opacity .25s, visibility .25s; }
+    .lightbox.open { opacity: 1; visibility: visible; pointer-events: auto; }
+    .lightbox-dialog { display: grid; width: min(100%, 1120px); max-height: 92vh; grid-template-rows: auto minmax(0, 1fr) auto; gap: 14px; }
+    .lightbox-top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .lightbox-meta { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .lightbox-count { padding: 5px 10px; border: 1px solid #2E2E34; border-radius: 999px; background: #141417; color: #C6A982; font: 500 10px var(--display); letter-spacing: .08em; }
+    .lightbox-caption { overflow: hidden; color: #F4F4F5; font: 500 13px var(--display); text-overflow: ellipsis; white-space: nowrap; }
+    .lightbox-btn { display: inline-flex; min-height: 40px; align-items: center; justify-content: center; gap: 7px; padding: 0 15px; border: 1px solid #303036; border-radius: 999px; background: #141417; color: #F4F4F5; cursor: pointer; font: 600 11px var(--sans); transition: border-color .2s, background .2s; }
+    .lightbox-btn:hover { border-color: #C6A982; background: #1C1C20; }
+    .lightbox-stage { display: grid; min-height: 0; place-items: center; overflow: hidden; border: 1px solid #26262B; border-radius: 18px; background: #0E0E10; padding: 10px; }
+    .lightbox-stage img { max-width: 100%; max-height: 72vh; width: auto; height: auto; border-radius: 10px; object-fit: contain; }
+    .lightbox-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .lightbox-hint { color: #77777D; font: 500 10px var(--display); letter-spacing: .08em; text-transform: uppercase; }
+    .lightbox-nav { display: flex; gap: 8px; }
 
     #services { padding-top: 75px; }
     .accordion { display: grid; gap: 10px; }
@@ -288,6 +349,9 @@
     .footer-bottom a:hover { color: var(--cyan); }
     .reveal { opacity: 1; }
 
+    @media (max-width: 960px) {
+      .brand-tag { display: none; }
+    }
     @media (max-width: 900px) {
       :root { --pad: 28px; }
       .hero-grid { grid-template-columns: minmax(0,1fr) minmax(245px,.75fr); gap: 35px; }
@@ -295,12 +359,12 @@
       .bento-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
       .bento-card { min-height: 210px; }
       .project-card { width: min(70vw,350px); }
+      .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
     @media (max-width: 680px) {
       :root { --pad: 20px; }
       .site-nav { top: 10px; width: calc(100% - 20px); min-height: 54px; gap: 12px; padding: 0 15px; }
       .brand { font-size: 12px; }
-      .brand-tag { font-size: 8px; }
       .nav-cta { display: none; }
       .nav-toggle { display: inline-flex; min-height: 38px; align-items: center; padding: 0 13px; border: 1px solid var(--line); border-radius: 999px; background: #171719; font-size: 11px; }
       .nav-links { position: absolute; top: 62px; right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 8px; border: 1px solid var(--line); border-radius: 18px; background: rgba(18,18,20,.98); box-shadow: 0 18px 42px rgba(0,0,0,.38); backdrop-filter: blur(18px); }
@@ -317,7 +381,7 @@
       .portrait-frame img { border-radius: 20px; }
       .stack-badge { padding: 9px 12px; font-size: 10px; }
       .marquee-group { gap: 8px; padding-block: 13px; }
-      #about, #works, #automation, #services { padding: 78px var(--pad); }
+      #about, #works, #automation, #media, #photography, #services { padding: 72px var(--pad); }
       .section-heading { margin-bottom: 27px; }
       .section-heading h2 { font-size: clamp(2.3rem,10vw,3.3rem); }
       .section-heading p { font-size: 12px; }
@@ -340,15 +404,22 @@
       .project-info p { min-height: 0; }
       .projects-hint { display: none; }
       #works { padding-top: 78px; }
-      .works-grid, .automation-grid { grid-template-columns: 1fr; gap: 12px; }
+      .works-grid, .automation-grid, .media-grid { grid-template-columns: 1fr; gap: 12px; }
       .work-card { min-height: 0; }
       .work-preview { height: 138px; }
       .work-copy p { min-height: 0; }
-      #automation { padding: 0 var(--pad) 75px; }
+      #automation { padding: 0 var(--pad) 64px; }
       .automation-shell { padding: 20px 14px; border-radius: 22px; }
       .terminal { min-height: 136px; padding: 14px; font-size: 9px; }
       .automation-copy { padding: 17px 15px 19px; }
-      #services { padding-top: 10px; }
+      .photo-head { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .photo-card { padding: 6px; border-radius: 16px; }
+      .photo-frame { border-radius: 11px; }
+      .photo-overlay { right: 6px; bottom: 6px; left: 6px; padding: 7px 9px; }
+      .photo-title { font-size: 10px; }
+      .lightbox-hint { display: none; }
+      #services { padding-top: 64px; }
       .service-trigger { min-height: 69px; grid-template-columns: 29px minmax(0,1fr) 30px; gap: 8px; padding: 13px 14px; }
       .service-trigger strong { font-size: 13px; line-height: 1.4; }
       .service-panel-inner { padding-inline: 51px 14px; }
@@ -367,7 +438,7 @@
       .hero-copy h1 { font-size: 2.6rem; }
       .hero-actions .pill-link { padding-inline: 14px; }
       .bento-card, .bento-card:nth-child(1), .bento-card:nth-child(2) { padding: 15px; }
-      .footer-links { grid-template-columns: 1fr; }
+      .photo-grid, .footer-links { grid-template-columns: 1fr; }
     }
     @media (prefers-reduced-motion: reduce) {
       *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
@@ -383,6 +454,8 @@
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
       <a href="#works">More work</a>
+      <a href="#media">YouTube</a>
+      <a href="#photography">Photography</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </div>
@@ -416,10 +489,10 @@
     <div class="stack-marquee" aria-label="Technology stack">
       <div class="marquee-track">
         <div class="marquee-group">
-          <span class="stack-badge" style="--badge-color:#FFD43B">Python</span><span class="stack-badge" style="--badge-color:#4FC3F7">Flutter</span><span class="stack-badge" style="--badge-color:#61DAFB">React</span><span class="stack-badge" style="--badge-color:#fff">Next.js</span><span class="stack-badge" style="--badge-color:#34D399">Supabase</span><span class="stack-badge" style="--badge-color:#F89820">JavaFX</span><span class="stack-badge" style="--badge-color:#A97BFF">Kotlin</span><span class="stack-badge" style="--badge-color:#818CF8">AI Agents</span><span class="stack-badge" style="--badge-color:#34D399">QA Testing</span><span class="stack-badge" style="--badge-color:#38BDF8">Docker</span><span class="stack-badge">Tailwind CSS</span><span class="stack-badge">PostgreSQL RLS</span><span class="stack-badge">C# / .NET</span><span class="stack-badge">PDF.js</span><span class="stack-badge">HTML5 Canvas</span><span class="stack-badge">Playwright</span>
+          <span class="stack-badge">Python</span><span class="stack-badge">Flutter</span><span class="stack-badge">React</span><span class="stack-badge">Next.js</span><span class="stack-badge">Supabase</span><span class="stack-badge">JavaFX</span><span class="stack-badge">Kotlin</span><span class="stack-badge">AI Agents</span><span class="stack-badge">QA Testing</span><span class="stack-badge">Docker</span><span class="stack-badge">Tailwind CSS</span><span class="stack-badge">PostgreSQL RLS</span><span class="stack-badge">C# / .NET</span><span class="stack-badge">PDF.js</span><span class="stack-badge">HTML5 Canvas</span><span class="stack-badge">Playwright</span>
         </div>
         <div class="marquee-group" aria-hidden="true">
-          <span class="stack-badge" style="--badge-color:#FFD43B">Python</span><span class="stack-badge" style="--badge-color:#4FC3F7">Flutter</span><span class="stack-badge" style="--badge-color:#61DAFB">React</span><span class="stack-badge" style="--badge-color:#fff">Next.js</span><span class="stack-badge" style="--badge-color:#34D399">Supabase</span><span class="stack-badge" style="--badge-color:#F89820">JavaFX</span><span class="stack-badge" style="--badge-color:#A97BFF">Kotlin</span><span class="stack-badge" style="--badge-color:#818CF8">AI Agents</span><span class="stack-badge" style="--badge-color:#34D399">QA Testing</span><span class="stack-badge" style="--badge-color:#38BDF8">Docker</span><span class="stack-badge">Tailwind CSS</span><span class="stack-badge">PostgreSQL RLS</span><span class="stack-badge">C# / .NET</span><span class="stack-badge">PDF.js</span><span class="stack-badge">HTML5 Canvas</span><span class="stack-badge">Playwright</span>
+          <span class="stack-badge">Python</span><span class="stack-badge">Flutter</span><span class="stack-badge">React</span><span class="stack-badge">Next.js</span><span class="stack-badge">Supabase</span><span class="stack-badge">JavaFX</span><span class="stack-badge">Kotlin</span><span class="stack-badge">AI Agents</span><span class="stack-badge">QA Testing</span><span class="stack-badge">Docker</span><span class="stack-badge">Tailwind CSS</span><span class="stack-badge">PostgreSQL RLS</span><span class="stack-badge">C# / .NET</span><span class="stack-badge">PDF.js</span><span class="stack-badge">HTML5 Canvas</span><span class="stack-badge">Playwright</span>
         </div>
       </div>
     </div>
@@ -552,6 +625,77 @@
       </div>
     </section>
 
+    <section id="media" aria-labelledby="media-title">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <span class="eyebrow">YouTube Channels</span>
+          <h2 id="media-title">Video production <span class="bento-accent">&amp; channels.</span></h2>
+          <p>Two YouTube channels I produce and edit—focused on clean gameplay capture, pacing, and atmospheric storytelling.</p>
+        </div>
+        <div class="media-grid">
+          <article class="glass-card channel-card reveal">
+            <div class="channel-stage" aria-hidden="true">
+              <div class="channel-player">
+                <div class="channel-player-top">
+                  <div class="channel-play"><svg viewBox="0 0 16 16"><path d="M4 2.8v10.4L13 8 4 2.8z"/></svg></div>
+                  <div class="channel-meta"><strong>SilentAlgo</strong><span>youtube.com/@silentalgoo</span></div>
+                  <span class="channel-badge">HD 60FPS</span>
+                </div>
+                <div class="channel-scrubber"><i></i><span>NO-COMMENTARY</span></div>
+              </div>
+            </div>
+            <div class="channel-copy">
+              <span class="mono">Channel 01 / Gaming &amp; Walkthroughs</span>
+              <h3>SilentAlgo</h3>
+              <p>Silent, no-commentary gameplay walkthroughs and tactical highlights crafted with crisp capture, clean pacing, and focused editing.</p>
+              <div class="tech-pills"><span>Gaming</span><span>No-Commentary</span><span>CapCut &amp; FFmpeg</span></div>
+              <div class="channel-footer">
+                <span class="mono">@silentalgoo</span>
+                <a href="https://www.youtube.com/@silentalgoo" target="_blank" rel="noopener noreferrer">Visit channel <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+
+          <article class="glass-card channel-card reveal">
+            <div class="channel-stage" aria-hidden="true">
+              <div class="channel-player">
+                <div class="channel-player-top">
+                  <div class="channel-play"><svg viewBox="0 0 16 16"><path d="M4 2.8v10.4L13 8 4 2.8z"/></svg></div>
+                  <div class="channel-meta"><strong>Ruined Realms</strong><span>youtube.com/@RuinedRealms</span></div>
+                  <span class="channel-badge">Visuals</span>
+                </div>
+                <div class="channel-scrubber"><i></i><span>STORY &amp; ATMOSPHERE</span></div>
+              </div>
+            </div>
+            <div class="channel-copy">
+              <span class="mono">Channel 02 / Visual Media &amp; Storytelling</span>
+              <h3>Ruined Realms</h3>
+              <p>Dark-atmosphere visual storytelling, world-building edits, and curated gaming narratives shaped around mood, sound, and cinematic pacing.</p>
+              <div class="tech-pills"><span>Storytelling</span><span>Visual Editing</span><span>YouTube</span></div>
+              <div class="channel-footer">
+                <span class="mono">@RuinedRealms</span>
+                <a href="https://www.youtube.com/@RuinedRealms" target="_blank" rel="noopener noreferrer">Visit channel <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="photography" aria-labelledby="photography-title">
+      <div class="wrap">
+        <div class="photo-head">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Photography</span>
+            <h2 id="photography-title">Captured through <span class="bento-accent">my lens.</span></h2>
+            <p>Architecture, historical landmarks, coastal skies, and quiet street frames photographed in Alexandria and across Egypt.</p>
+          </div>
+          <div class="photo-counter-pill" aria-live="polite"><i aria-hidden="true"></i><span id="photo-count-label">Loading frames</span></div>
+        </div>
+        <div class="photo-grid" id="photo-grid" aria-label="Photography gallery"></div>
+      </div>
+    </section>
+
     <section id="services" aria-labelledby="services-title">
       <div class="wrap">
         <div class="section-heading reveal"><span class="eyebrow">Ways I can contribute</span><h2 id="services-title">Build, test, automate.</h2><p>Web development, software QA, and practical task automation.</p></div>
@@ -575,11 +719,34 @@
         <a class="pill-link" href="https://github.com/mohamedsabae50-prog" target="_blank" rel="noopener noreferrer">GitHub <span class="arrow" aria-hidden="true">↗</span></a>
         <a class="pill-link" href="https://www.linkedin.com/in/mohamed-hamdy-008135231/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="arrow" aria-hidden="true">↗</span></a>
         <a class="pill-link" href="https://www.youtube.com/@silentalgoo" target="_blank" rel="noopener noreferrer">YouTube @silentalgoo <span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="pill-link" href="https://www.youtube.com/@RuinedRealms" target="_blank" rel="noopener noreferrer">YouTube @RuinedRealms <span class="arrow" aria-hidden="true">↗</span></a>
         <a class="pill-link" href="MOHAMED_HAMDY.pdf" target="_blank" rel="noopener">Download CV <span class="arrow" aria-hidden="true">↗</span></a>
       </div>
       <div class="footer-bottom"><span>© <span id="year">2026</span> Mohamed Hamdy · Alexandria, Egypt.</span><a href="#home">Back to top ↑</a></div>
     </div>
   </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-caption" aria-hidden="true">
+    <div class="lightbox-dialog">
+      <div class="lightbox-top">
+        <div class="lightbox-meta">
+          <span class="lightbox-count" id="lightbox-count">01 / 01</span>
+          <span class="lightbox-caption" id="lightbox-caption"></span>
+        </div>
+        <button class="lightbox-btn" type="button" id="lightbox-close" aria-label="Close image preview">Close ✕</button>
+      </div>
+      <div class="lightbox-stage">
+        <img id="lightbox-img" src="" alt="">
+      </div>
+      <div class="lightbox-controls">
+        <span class="lightbox-hint">Use ← → arrow keys or Esc to close</span>
+        <div class="lightbox-nav">
+          <button class="lightbox-btn" type="button" id="lightbox-prev" aria-label="Previous photo">← Prev</button>
+          <button class="lightbox-btn" type="button" id="lightbox-next" aria-label="Next photo">Next →</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -593,7 +760,6 @@
       const nextButton = document.querySelector(".projects-next");
       const count = document.querySelector(".project-count");
       const projectViewport = document.querySelector(".project-viewport");
-      const projectTrack = document.querySelector(".project-track");
       const projectDots = [...document.querySelectorAll(".project-dot")];
       let activeProject = 0;
       let dragStart = null;
@@ -723,6 +889,133 @@
         event.stopPropagation();
         dragged = false;
       }, true);
+
+      /* ================= PHOTOGRAPHY GALLERY & LIGHTBOX ================= */
+      // Optional local list for offline preview (e.g. ["alexandria-sea.jpg", "statue.webp"]).
+      // Any images pushed to the GitHub `photos/` folder are also discovered automatically!
+      const LOCAL_PHOTOS = [{"file":"WhatsApp Image 2024-12-27 at 15.56.07_93d7cb29.jpg","title":"Frame 01"},{"file":"WhatsApp Image 2026-11-20 at 11.45.22 AM.jpeg","title":"Frame 02"},{"file":"WhatsApp Image 2026-11-20 at 11.45.23 AM.jpeg","title":"Frame 03"},{"file":"WhatsApp Image 2026-11-20 at 11.45.24 AM.jpeg","title":"Frame 04"},{"file":"WhatsApp Image 2026-11-20 at 11.45.25 AM.jpeg","title":"Frame 05"},{"file":"WhatsApp Image 2026-11-20 at 11.45.26 AM.jpeg","title":"Frame 06"},{"file":"WhatsApp Image 2026-11-20 at 11.45.27 AM (1).jpeg","title":"Frame 07"},{"file":"WhatsApp Image 2026-11-20 at 11.45.28 AM (1).jpeg","title":"Frame 08"},{"file":"WhatsApp Image 2026-11-20 at 11.45.28 AM.jpeg","title":"Frame 09"},{"file":"WhatsApp Image 2026-11-20 at 11.45.29 AM (1).jpeg","title":"Frame 10"},{"file":"WhatsApp Image 2026-11-20 at 11.45.29 AM.jpeg","title":"Frame 11"},{"file":"WhatsApp Image 2026-11-20 at 11.45.30 AM.jpeg","title":"Frame 12"},{"file":"WhatsApp Image 2026-11-20 at 11.45.31 AM (1).jpeg","title":"Frame 13"},{"file":"WhatsApp Image 2026-11-20 at 11.45.31 AM.jpeg","title":"Frame 14"},{"file":"WhatsApp Image 2026-11-20 at 11.45.32 AM (1).jpeg","title":"Frame 15"},{"file":"WhatsApp Image 2026-11-20 at 11.45.32 AM (2).jpeg","title":"Frame 16"},{"file":"WhatsApp Image 2026-11-20 at 11.45.32 AM (3).jpeg","title":"Frame 17"},{"file":"WhatsApp Image 2026-11-20 at 11.45.32 AM (4).jpeg","title":"Frame 18"},{"file":"WhatsApp Image 2026-11-20 at 11.45.32 AM.jpeg","title":"Frame 19"},{"file":"WhatsApp Image 2026-11-20 at 11.45.36 AM.jpeg","title":"Frame 20"},{"file":"WhatsApp Image 2026-11-20 at 11.45.37 AM.jpeg","title":"Frame 21"},{"file":"WhatsApp Image 2026-11-20 at 11.45.38 AM.jpeg","title":"Frame 22"},{"file":"WhatsApp Image 2026-11-20 at 11.45.39 AM.jpeg","title":"Frame 23"},{"file":"WhatsApp Image 2026-11-20 at 11.45.40 AM.jpeg","title":"Frame 24"},{"file":"WhatsApp Image 2026-11-20 at 11.45.41 AM.jpeg","title":"Frame 25"},{"file":"WhatsApp Image 2026-11-20 at 11.45.42 AM (1).jpeg","title":"Frame 26"},{"file":"WhatsApp Image 2026-11-20 at 11.45.42 AM (2).jpeg","title":"Frame 27"},{"file":"WhatsApp Image 2026-11-20 at 11.45.42 AM (3).jpeg","title":"Frame 28"},{"file":"WhatsApp Image 2026-11-20 at 11.45.42 AM (4).jpeg","title":"Frame 29"},{"file":"WhatsApp Image 2026-11-20 at 11.45.42 AM (5).jpeg","title":"Frame 30"},{"file":"WhatsApp Image 2026-11-20 at 11.45.42 AM (6).jpeg","title":"Frame 31"},{"file":"WhatsApp Image 2026-11-20 at 11.45.42 AM.jpeg","title":"Frame 32"},{"file":"WhatsApp Image 2026-11-20 at 11.45.43 AM.jpeg","title":"Frame 33"}];
+      const PHOTO_EXT = /\.(jpe?g|png|webp|avif)$/i;
+      const photoGrid = document.querySelector("#photo-grid");
+      const photoCountLabel = document.querySelector("#photo-count-label");
+      const lightbox = document.querySelector("#lightbox");
+      const lightboxImg = document.querySelector("#lightbox-img");
+      const lightboxCaption = document.querySelector("#lightbox-caption");
+      const lightboxCount = document.querySelector("#lightbox-count");
+      const lightboxClose = document.querySelector("#lightbox-close");
+      const lightboxPrev = document.querySelector("#lightbox-prev");
+      const lightboxNext = document.querySelector("#lightbox-next");
+      let galleryItems = [];
+      let activePhotoIndex = 0;
+      let lastFocusedPhoto = null;
+
+      const formatPhotoTitle = (filename) => {
+        const clean = filename.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").trim();
+        return clean ? clean.replace(/\b\w/g, (ch) => ch.toUpperCase()) : "Photograph";
+      };
+
+      const updateLightbox = () => {
+        if (!galleryItems.length) return;
+        const item = galleryItems[activePhotoIndex];
+        lightboxImg.src = item.src;
+        lightboxImg.alt = item.title;
+        lightboxCaption.textContent = item.title;
+        lightboxCount.textContent = `${String(activePhotoIndex + 1).padStart(2, "0")} / ${String(galleryItems.length).padStart(2, "0")}`;
+      };
+
+      const openLightbox = (index, trigger) => {
+        if (!galleryItems.length) return;
+        activePhotoIndex = index;
+        lastFocusedPhoto = trigger || null;
+        updateLightbox();
+        lightbox.classList.add("open");
+        lightbox.setAttribute("aria-hidden", "false");
+        lightboxClose.focus();
+      };
+
+      const closeLightbox = () => {
+        lightbox.classList.remove("open");
+        lightbox.setAttribute("aria-hidden", "true");
+        if (lastFocusedPhoto) lastFocusedPhoto.focus();
+      };
+
+      const stepLightbox = (delta) => {
+        if (!galleryItems.length) return;
+        activePhotoIndex = (activePhotoIndex + delta + galleryItems.length) % galleryItems.length;
+        updateLightbox();
+      };
+
+      lightboxClose.addEventListener("click", closeLightbox);
+      lightboxPrev.addEventListener("click", () => stepLightbox(-1));
+      lightboxNext.addEventListener("click", () => stepLightbox(1));
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (!lightbox.classList.contains("open")) return;
+        if (event.key === "Escape") closeLightbox();
+        else if (event.key === "ArrowRight") stepLightbox(1);
+        else if (event.key === "ArrowLeft") stepLightbox(-1);
+      });
+
+      const renderGallery = (items) => {
+        galleryItems = items;
+        photoGrid.innerHTML = "";
+        if (!items.length) {
+          photoCountLabel.textContent = "00 Frames";
+          photoGrid.innerHTML = `<div class="photo-empty"><strong>Photography collection ready</strong><p>Add your <code>.jpg</code>, <code>.png</code>, or <code>.webp</code> shots inside the <code>photos/</code> folder and push to GitHub — they will appear here automatically with full-screen lightbox viewing.</p></div>`;
+          return;
+        }
+        photoCountLabel.textContent = `${String(items.length).padStart(2, "0")} ${items.length === 1 ? "Frame" : "Frames"}`;
+        const frag = document.createDocumentFragment();
+        items.forEach((item, index) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "glass-card photo-card";
+          btn.setAttribute("aria-label", `Open photograph: ${item.title}`);
+          btn.innerHTML = `<div class="photo-frame"><img src="${item.src}" alt="${item.title}" loading="lazy" decoding="async"><div class="photo-overlay"><span class="photo-title">${item.title}</span><span class="photo-expand">View ↗</span></div></div>`;
+          btn.addEventListener("click", () => openLightbox(index, btn));
+          frag.appendChild(btn);
+        });
+        photoGrid.appendChild(frag);
+        if (window.ScrollTrigger) ScrollTrigger.refresh();
+      };
+
+      const loadGallery = async () => {
+        const map = new Map();
+        LOCAL_PHOTOS.forEach((entry) => {
+          const name = typeof entry === "string" ? entry : entry.file;
+          if (!name || !PHOTO_EXT.test(name)) return;
+          const title = typeof entry === "object" && entry.title ? entry.title : formatPhotoTitle(name);
+          map.set(name, { src: `photos/${encodeURIComponent(name)}`, title });
+        });
+
+        try {
+          const res = await fetch("https://api.github.com/repos/mohamedsabae50-prog/portfolio/contents/photos", {
+            headers: { Accept: "application/vnd.github+json" }
+          });
+          if (res.ok) {
+            const files = await res.json();
+            if (Array.isArray(files)) {
+              files
+                .filter((f) => f && f.type === "file" && PHOTO_EXT.test(f.name))
+                .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true }))
+                .forEach((f) => {
+                  if (!map.has(f.name)) {
+                    map.set(f.name, {
+                      src: `photos/${encodeURIComponent(f.name)}`,
+                      title: formatPhotoTitle(f.name)
+                    });
+                  }
+                });
+            }
+          }
+        } catch (_) {
+          // Offline or API rate-limited: gracefully relies on LOCAL_PHOTOS
+        }
+
+        renderGallery([...map.values()]);
+      };
+      loadGallery();
 
       if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
         document.querySelectorAll(".glass-card").forEach((card) => {
